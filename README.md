@@ -37,6 +37,7 @@ It creates problem folders, verifies JavaScript solutions, publishes aggregated 
 │   ├── projects.json
 │   ├── stats.json
 │   └── metadata.json
+├── portfolio.config.json
 ├── scripts/
 │   ├── build.js
 │   ├── validate.js
@@ -202,6 +203,42 @@ That runs:
 2. `npm run build`
 
 `npm run build` also refreshes `data/projects.json` from public GitHub repositories.
+
+## Featured Projects
+
+Featured project order is controlled in [portfolio.config.json](/Users/sunilkumarkv/Desktop/Projects/coding-journal/portfolio.config.json:1).
+
+Example:
+
+```json
+{
+  "featuredProjects": [
+    "sunilcraft",
+    "rainbowcode",
+    "chessplay",
+    "coding-journal",
+    "attendance-tracker"
+  ]
+}
+```
+
+How it works:
+
+- listed repositories are marked with `"featured": true`
+- featured projects get lower `"priority"` numbers based on list order
+- featured projects appear first in `data/projects.json`
+- non-featured public repos still appear after featured ones
+- forks, archived repos, and private repos are excluded
+
+To feature a project:
+
+- add its repo name or normalized alias to `featuredProjects`
+
+To unfeature a project:
+
+- remove it from `featuredProjects`
+
+Name matching is normalization-aware, so values like `attendance-tracker`, `AttendanceTracker`, and `chessplay` can still match existing GitHub repo names like `AttendanceTracker` or `chessPlay`.
 
 ## Tests
 
