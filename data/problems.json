@@ -1,0 +1,19 @@
+[
+  {
+    "title": "Two Sum",
+    "slug": "two-sum",
+    "platform": "LeetCode",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/two-sum/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [
+      "Array",
+      "Hash Map"
+    ],
+    "timeComplexity": "O(n)",
+    "spaceComplexity": "O(n)",
+    "verified": true,
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/two-sum/explanation.md"
+  }
+]

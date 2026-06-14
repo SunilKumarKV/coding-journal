@@ -1,0 +1,15 @@
+{
+  "totalProblems": 1,
+  "verifiedProblems": 1,
+  "totalProjects": 17,
+  "byPlatform": {
+    "LeetCode": 1
+  },
+  "byDifficulty": {
+    "Easy": 1
+  },
+  "byTag": {
+    "Array": 1,
+    "Hash Map": 1
+  }
+}

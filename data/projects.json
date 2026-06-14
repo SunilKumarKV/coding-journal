@@ -1,0 +1,288 @@
+[
+  {
+    "name": "leetcode-sync",
+    "description": null,
+    "stars": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/leetcode-sync",
+    "homepage": null,
+    "updatedAt": "2026-06-14T13:21:37Z"
+  },
+  {
+    "name": "coding-journal",
+    "description": null,
+    "stars": 0,
+    "forks": 0,
+    "language": null,
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/coding-journal",
+    "homepage": null,
+    "updatedAt": "2026-06-13T04:13:40Z"
+  },
+  {
+    "name": "sunilcraft",
+    "description": "Personal developer portfolio showcasing production-ready full-stack products, UI engineering, and SaaS projects.",
+    "stars": 1,
+    "forks": 0,
+    "language": "JavaScript",
+    "topics": [
+      "developer",
+      "frontend",
+      "fullstack",
+      "portfolio",
+      "react",
+      "tailwind",
+      "vite"
+    ],
+    "url": "https://github.com/SunilKumarKV/sunilcraft",
+    "homepage": "https://sunilcraft.vercel.app",
+    "updatedAt": "2026-06-13T03:31:04Z"
+  },
+  {
+    "name": "learndojoworld",
+    "description": "Global learning SaaS platform focused on active recall, creator-led learning, progress tracking, and scalable architecture.",
+    "stars": 1,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [
+      "edtech",
+      "learning-platform",
+      "monorepo",
+      "nodejs",
+      "postgresql",
+      "prisma",
+      "react",
+      "saas"
+    ],
+    "url": "https://github.com/SunilKumarKV/learndojoworld",
+    "homepage": "",
+    "updatedAt": "2026-06-12T17:06:01Z"
+  },
+  {
+    "name": "rainbowcode",
+    "description": null,
+    "stars": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/rainbowcode",
+    "homepage": null,
+    "updatedAt": "2026-06-12T16:40:05Z"
+  },
+  {
+    "name": "chessPlay",
+    "description": "A real-time chess platform with multiplayer gameplay, AI engine, authentication, dashboards, and production backend.",
+    "stars": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "topics": [
+      "chess",
+      "express",
+      "fullstack",
+      "multiplayer",
+      "nodejs",
+      "postgresql",
+      "prisma",
+      "react",
+      "realtime",
+      "saas",
+      "socketio",
+      "stockfish"
+    ],
+    "url": "https://github.com/SunilKumarKV/chessPlay",
+    "homepage": "https://getchessplay.vercel.app",
+    "updatedAt": "2026-06-02T13:00:29Z"
+  },
+  {
+    "name": "chessplay-docs",
+    "description": "Public documentation and project manual for ChessPlay, including architecture, setup, features, deployment, and academic/project documentation.",
+    "stars": 1,
+    "forks": 0,
+    "language": null,
+    "topics": [
+      "academic-project",
+      "architecture",
+      "chessplay",
+      "deployment",
+      "documentation",
+      "fullstack",
+      "manual",
+      "nodejs",
+      "project-docs",
+      "react"
+    ],
+    "url": "https://github.com/SunilKumarKV/chessplay-docs",
+    "homepage": "",
+    "updatedAt": "2026-06-02T11:00:50Z"
+  },
+  {
+    "name": "chessplay-showcase",
+    "description": "Production real-time chess platform showcase with multiplayer, AI gameplay, dashboards, and product roadmap.",
+    "stars": 1,
+    "forks": 0,
+    "language": "JavaScript",
+    "topics": [
+      "chess",
+      "fullstack",
+      "multiplayer",
+      "nodejs",
+      "react",
+      "realtime-game",
+      "socketio",
+      "stockfish"
+    ],
+    "url": "https://github.com/SunilKumarKV/chessplay-showcase",
+    "homepage": "https://getchessplay.vercel.app",
+    "updatedAt": "2026-06-02T10:59:44Z"
+  },
+  {
+    "name": "chessplay-mobile",
+    "description": "Native React Native + Expo mobile client for ChessPlay with multiplayer chess, AI gameplay, chat, and mobile dashboards.",
+    "stars": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [
+      "chess",
+      "expo",
+      "mobile-app",
+      "react-native",
+      "socketio",
+      "typescript"
+    ],
+    "url": "https://github.com/SunilKumarKV/chessplay-mobile",
+    "homepage": "",
+    "updatedAt": "2026-05-26T22:14:55Z"
+  },
+  {
+    "name": "10-mini-Projects-In-10-Days-JavaScript",
+    "description": "10 practical JavaScript mini projects focused on DOM manipulation, validation, events, and frontend fundamentals.",
+    "stars": 0,
+    "forks": 0,
+    "language": "JavaScript",
+    "topics": [
+      "beginner-projects",
+      "css3",
+      "dom",
+      "front",
+      "html5",
+      "javascript",
+      "learn",
+      "mini-projects"
+    ],
+    "url": "https://github.com/SunilKumarKV/10-mini-Projects-In-10-Days-JavaScript",
+    "homepage": "https://sunilkumarkv.github.io/10-mini-Projects-In-10-Days-JavaScript/",
+    "updatedAt": "2026-05-26T15:18:02Z"
+  },
+  {
+    "name": "SunilKumarKV",
+    "description": null,
+    "stars": 0,
+    "forks": 0,
+    "language": null,
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/SunilKumarKV",
+    "homepage": null,
+    "updatedAt": "2026-05-26T15:04:33Z"
+  },
+  {
+    "name": "healthcare-dashboard",
+    "description": "Pixel-perfect React healthcare dashboard UI showcase.",
+    "stars": 0,
+    "forks": 0,
+    "language": "CSS",
+    "topics": [
+      "dashboard",
+      "frontend",
+      "healthcare",
+      "react",
+      "responsive-design",
+      "ui"
+    ],
+    "url": "https://github.com/SunilKumarKV/healthcare-dashboard",
+    "homepage": "https://health-care-dashboard-delta.vercel.app",
+    "updatedAt": "2026-05-26T13:51:21Z"
+  },
+  {
+    "name": "devwithsunil",
+    "description": "Developer content platform with blogs, tutorials, newsletter, and admin dashboard.",
+    "stars": 1,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [
+      "blog",
+      "content-platform",
+      "developer-platform",
+      "nodejs",
+      "portfolio",
+      "react"
+    ],
+    "url": "https://github.com/SunilKumarKV/devwithsunil",
+    "homepage": "https://devwithsunil.vercel.app",
+    "updatedAt": "2026-05-26T13:50:13Z"
+  },
+  {
+    "name": "dsa-java",
+    "description": "This repository contains Data Structure and Algorithms(DSA) code using Java with Explanation, which will helps you to master DSA. 🚀✅",
+    "stars": 0,
+    "forks": 0,
+    "language": "Java",
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/dsa-java",
+    "homepage": null,
+    "updatedAt": "2026-05-26T13:40:05Z"
+  },
+  {
+    "name": "AttendanceTracker",
+    "description": "Production attendance management platform for institutes built with PNPM monorepo architecture.",
+    "stars": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [
+      "attendance-management",
+      "enterprise-app",
+      "monorepo",
+      "nodejs",
+      "postgresql",
+      "prisma",
+      "react"
+    ],
+    "url": "https://github.com/SunilKumarKV/AttendanceTracker",
+    "homepage": "https://attendancetrackerpro.vercel.app",
+    "updatedAt": "2026-05-26T11:57:35Z"
+  },
+  {
+    "name": "getcompressly",
+    "description": "Production SaaS for PDF & image compression built with React, Node.js, PostgreSQL, and Prisma.",
+    "stars": 0,
+    "forks": 0,
+    "language": "TypeScript",
+    "topics": [
+      "express",
+      "file-upload",
+      "image-compressor",
+      "nodejs",
+      "pdf-compressor",
+      "postgresql",
+      "prisma",
+      "react",
+      "saas",
+      "typescript"
+    ],
+    "url": "https://github.com/SunilKumarKV/getcompressly",
+    "homepage": "https://getcompressly.vercel.app",
+    "updatedAt": "2026-05-26T11:48:22Z"
+  },
+  {
+    "name": "LinkedIn-login-page",
+    "description": null,
+    "stars": 0,
+    "forks": 0,
+    "language": "HTML",
+    "topics": [],
+    "url": "https://github.com/SunilKumarKV/LinkedIn-login-page",
+    "homepage": "https://sunilkumarkv.github.io/LinkedIn-login-page/",
+    "updatedAt": "2025-09-13T18:26:22Z"
+  }
+]

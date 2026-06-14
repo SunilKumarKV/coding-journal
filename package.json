@@ -1,0 +1,14 @@
+{
+  "name": "coding-journal",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.js",
+    "build": "node scripts/build.js",
+    "sync": "npm run validate && npm run build"
+  }
+}
