@@ -1,16 +1,5 @@
 [
   {
-    "name": "coding-journal",
-    "description": null,
-    "stars": 0,
-    "forks": 0,
-    "language": "JavaScript",
-    "topics": [],
-    "url": "https://github.com/SunilKumarKV/coding-journal",
-    "homepage": null,
-    "updatedAt": "2026-06-14T18:25:19Z"
-  },
-  {
     "name": "sunilcraft",
     "description": "Personal developer portfolio showcasing production-ready full-stack products, UI engineering, and SaaS projects.",
     "stars": 1,
@@ -27,38 +16,9 @@
     ],
     "url": "https://github.com/SunilKumarKV/sunilcraft",
     "homepage": "https://sunilcraft.vercel.app",
-    "updatedAt": "2026-06-14T17:43:09Z"
-  },
-  {
-    "name": "leetcode-sync",
-    "description": null,
-    "stars": 0,
-    "forks": 0,
-    "language": "JavaScript",
-    "topics": [],
-    "url": "https://github.com/SunilKumarKV/leetcode-sync",
-    "homepage": null,
-    "updatedAt": "2026-06-14T13:21:37Z"
-  },
-  {
-    "name": "learndojoworld",
-    "description": "Global learning SaaS platform focused on active recall, creator-led learning, progress tracking, and scalable architecture.",
-    "stars": 1,
-    "forks": 0,
-    "language": "TypeScript",
-    "topics": [
-      "edtech",
-      "learning-platform",
-      "monorepo",
-      "nodejs",
-      "postgresql",
-      "prisma",
-      "react",
-      "saas"
-    ],
-    "url": "https://github.com/SunilKumarKV/learndojoworld",
-    "homepage": "",
-    "updatedAt": "2026-06-12T17:06:01Z"
+    "updatedAt": "2026-06-14T18:53:30Z",
+    "featured": true,
+    "priority": 1
   },
   {
     "name": "rainbowcode",
@@ -108,7 +68,7 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/coding-journal",
     "homepage": null,
-    "updatedAt": "2026-06-14T18:25:35Z",
+    "updatedAt": "2026-06-14T19:06:00Z",
     "featured": true,
     "priority": 4
   },
@@ -142,7 +102,7 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/leetcode-sync",
     "homepage": null,
-    "updatedAt": "2026-06-14T13:21:37Z",
+    "updatedAt": "2026-06-14T19:02:32Z",
     "featured": false,
     "priority": 6
   },
