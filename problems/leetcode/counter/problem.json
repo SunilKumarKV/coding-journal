@@ -1,0 +1,16 @@
+{
+  "title": "Counter",
+  "slug": "counter",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/counter/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "JavaScript",
+    "Closure"
+  ],
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

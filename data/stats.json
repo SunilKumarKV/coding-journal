@@ -1,15 +1,25 @@
 {
-  "totalProblems": 1,
-  "verifiedProblems": 1,
-  "totalProjects": 17,
+  "totalProblems": 9,
+  "verifiedProblems": 9,
   "byPlatform": {
-    "LeetCode": 1
+    "LeetCode": 9
+  },
+  "byLanguage": {
+    "JavaScript": 9
   },
   "byDifficulty": {
-    "Easy": 1
+    "Easy": 9
   },
   "byTag": {
-    "Array": 1,
+    "Array": 4,
+    "Function": 5,
+    "Simulation": 3,
+    "JavaScript": 5,
+    "Closure": 3,
+    "Design": 2,
+    "Promise": 1,
+    "Async": 1,
     "Hash Map": 1
-  }
+  },
+  "totalProjects": 17
 }

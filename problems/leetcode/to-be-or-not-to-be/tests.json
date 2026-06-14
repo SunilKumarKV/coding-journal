@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": [5, [{ "method": "toBe", "arg": 5 }, { "method": "notToBe", "arg": 5 }]],
+      "expected": [true, "Equal"]
+    },
+    {
+      "input": ["hello", [{ "method": "notToBe", "arg": "world" }, { "method": "toBe", "arg": "world" }]],
+      "expected": [true, "Not Equal"]
+    }
+  ]
+}

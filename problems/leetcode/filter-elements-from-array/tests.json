@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "input": [[0, 10, 20, 30], "greaterThan10"],
+      "expected": [20, 30]
+    },
+    {
+      "input": [[1, 2, 3], "firstIndex"],
+      "expected": [1]
+    },
+    {
+      "input": [[-2, -1, 0, 1], "plusIndexTruthy"],
+      "expected": [-2, 0, 1]
+    }
+  ]
+}

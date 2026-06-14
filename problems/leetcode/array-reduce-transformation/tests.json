@@ -1,0 +1,16 @@
+{
+  "tests": [
+    {
+      "input": [[1, 2, 3, 4], "sum", 0],
+      "expected": 10
+    },
+    {
+      "input": [[1, 2, 3, 4], "sumSquares", 100],
+      "expected": 130
+    },
+    {
+      "input": [[], "product", 25],
+      "expected": 25
+    }
+  ]
+}

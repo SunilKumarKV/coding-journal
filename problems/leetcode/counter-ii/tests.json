@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": [5, ["increment", "reset", "decrement"]],
+      "expected": [6, 5, 4]
+    },
+    {
+      "input": [0, ["increment", "increment", "decrement", "reset"]],
+      "expected": [1, 2, 1, 0]
+    }
+  ]
+}

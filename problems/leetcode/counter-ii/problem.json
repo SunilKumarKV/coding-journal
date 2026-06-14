@@ -1,0 +1,17 @@
+{
+  "title": "Counter II",
+  "slug": "counter-ii",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/counter-ii/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "JavaScript",
+    "Closure",
+    "Design"
+  ],
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

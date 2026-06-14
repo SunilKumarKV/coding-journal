@@ -1,0 +1,17 @@
+{
+  "title": "To Be Or Not To Be",
+  "slug": "to-be-or-not-to-be",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/to-be-or-not-to-be/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "JavaScript",
+    "Function",
+    "Design"
+  ],
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

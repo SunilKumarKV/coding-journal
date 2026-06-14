@@ -1,14 +1,15 @@
 {
-  "title": "Two Sum",
-  "slug": "two-sum",
+  "title": "Filter Elements from Array",
+  "slug": "filter-elements-from-array",
   "platform": "LeetCode",
   "difficulty": "Easy",
-  "url": "https://leetcode.com/problems/two-sum/",
+  "url": "https://leetcode.com/problems/filter-elements-from-array/",
   "status": "Solved",
   "language": "JavaScript",
   "tags": [
     "Array",
-    "Hash Map"
+    "Function",
+    "Simulation"
   ],
   "timeComplexity": "O(n)",
   "spaceComplexity": "O(n)",

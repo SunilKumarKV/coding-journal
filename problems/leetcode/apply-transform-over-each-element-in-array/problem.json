@@ -1,0 +1,17 @@
+{
+  "title": "Apply Transform over Each Element in Array",
+  "slug": "apply-transform-over-each-element-in-array",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/apply-transform-over-each-element-in-array/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "Array",
+    "Function",
+    "Simulation"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(n)",
+  "verified": true
+}

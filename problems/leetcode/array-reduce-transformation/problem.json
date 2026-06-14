@@ -1,0 +1,17 @@
+{
+  "title": "Array Reduce Transformation",
+  "slug": "array-reduce-transformation",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/array-reduce-transformation/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "Array",
+    "Function",
+    "Simulation"
+  ],
+  "timeComplexity": "O(n)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

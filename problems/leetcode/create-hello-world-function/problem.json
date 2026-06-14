@@ -1,0 +1,17 @@
+{
+  "title": "Create Hello World Function",
+  "slug": "create-hello-world-function",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/create-hello-world-function/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "JavaScript",
+    "Function",
+    "Closure"
+  ],
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

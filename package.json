@@ -1,5 +1,5 @@
 {
-  "name": "coding-journal",
+  "name": "coding-journal-cli",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -9,6 +9,14 @@
   "scripts": {
     "validate": "node scripts/validate.js",
     "build": "node scripts/build.js",
-    "sync": "npm run validate && npm run build"
+    "sync": "npm run validate && npm run build",
+    "test": "node --test",
+    "cli": "node ./bin/cj.js"
+  },
+  "bin": {
+    "cj": "./bin/cj.js"
+  },
+  "dependencies": {
+    "commander": "^14.0.3"
   }
 }

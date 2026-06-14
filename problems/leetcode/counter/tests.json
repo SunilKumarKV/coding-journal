@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": [10, [null, null, null]],
+      "expected": [10, 11, 12]
+    },
+    {
+      "input": [-2, [null, null, null, null]],
+      "expected": [-2, -1, 0, 1]
+    }
+  ]
+}

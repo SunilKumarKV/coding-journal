@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": [[[], [1, 2, 3], [{ "name": "Sunil" }]]],
+      "expected": ["Hello World", "Hello World", "Hello World"]
+    },
+    {
+      "input": [[["anything"]]],
+      "expected": ["Hello World"]
+    }
+  ]
+}

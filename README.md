@@ -1,23 +1,36 @@
-# coding-journal
+# coding-journal-cli
 
-`coding-journal` is the source-of-truth repository for solved coding problems across LeetCode, HackerRank, CodeChef, Codeforces, and custom practice work. It stores each solution in a consistent folder structure and generates JSON files that SunilCraft can consume directly.
+`coding-journal-cli` is a Node.js CLI for managing solved coding problems and publishing structured JSON for `coding-journal`.
 
-## Requirements
+It creates problem folders, verifies JavaScript solutions, publishes aggregated data, and works cleanly in local development and GitHub Actions.
+
+## Stack
 
 - Node.js 20+
 - JavaScript ESM
+- Commander.js
 - No database
-- No frontend
+- GitHub Actions compatible
 
 ## Repository Structure
 
 ```text
 /
+├── bin/
+│   └── cj.js
+├── lib/
+│   ├── build-data.js
+│   ├── constants.js
+│   ├── github-projects-sync.js
+│   ├── journal.js
+│   ├── publish-journal.js
+│   └── validate-problems.js
 ├── problems/
 │   ├── leetcode/
 │   ├── hackerrank/
 │   ├── codechef/
 │   ├── codeforces/
+│   ├── geeksforgeeks/
 │   └── custom/
 ├── data/
 │   ├── problems.json
@@ -28,27 +41,121 @@
 │   ├── build.js
 │   ├── validate.js
 │   └── github-projects-sync.js
+├── tests/
+│   └── cli.test.js
 ├── .github/workflows/sync.yml
 ├── package.json
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
-## How To Add A Solved Problem
+## Supported Platforms
 
-Create a new folder under the right platform using the problem slug.
+- `leetcode`
+- `hackerrank`
+- `codechef`
+- `codeforces`
+- `geeksforgeeks`
+- `custom`
 
-Example:
+## Local Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the CLI locally:
+
+```bash
+npm run cli -- --help
+```
+
+Or use the binary directly:
+
+```bash
+node ./bin/cj.js --help
+```
+
+## CLI Commands
+
+### `cj add <platform> <slug>`
+
+Creates a new problem folder and starter files:
 
 ```text
-problems/leetcode/two-sum/
+problems/<platform>/<slug>/
 ├── problem.json
 ├── solution.js
 ├── tests.json
 └── explanation.md
 ```
 
-`problem.json` format:
+Example:
+
+```bash
+node ./bin/cj.js add leetcode two-sum
+```
+
+What it writes:
+
+- `problem.json` with known fields derived from the platform and slug
+- `solution.js` starter exporting a default function
+- `tests.json` with an empty `tests` array
+- `explanation.md` with a documentation template
+
+The command does not invent fake tests or fake problem metadata beyond what can be derived from the slug and chosen platform.
+
+### `cj verify`
+
+Runs all tests for complete problem folders and updates source verification state.
+
+Behavior:
+
+- scans complete problems with all required files
+- imports `solution.js`
+- runs tests from `tests.json`
+- writes `.cache/validation-results.json`
+- updates each problem's `problem.json` with `verified: true` or `verified: false`
+
+Run:
+
+```bash
+node ./bin/cj.js verify
+```
+
+### `cj publish`
+
+Publishes journal data files:
+
+- `data/problems.json`
+- `data/stats.json`
+- `data/metadata.json`
+
+Run:
+
+```bash
+node ./bin/cj.js publish
+```
+
+### `cj stats`
+
+Displays:
+
+- total problems
+- verified problems
+- platform counts
+- language counts
+
+Run:
+
+```bash
+node ./bin/cj.js stats
+```
+
+## Problem File Format
+
+Typical `problem.json`:
 
 ```json
 {
@@ -61,11 +168,12 @@ problems/leetcode/two-sum/
   "language": "JavaScript",
   "tags": ["Array", "Hash Map"],
   "timeComplexity": "O(n)",
-  "spaceComplexity": "O(n)"
+  "spaceComplexity": "O(n)",
+  "verified": true
 }
 ```
 
-`tests.json` format:
+Typical `tests.json`:
 
 ```json
 {
@@ -78,102 +186,50 @@ problems/leetcode/two-sum/
 }
 ```
 
-`solution.js` should export a default function. The validator calls that function with the `input` array spread as arguments.
+`solution.js` must export a default function.
 
-Example:
+## Publishing Flow
 
-```js
-export default function solve(nums, target) {
-  return [];
-}
-```
-
-## How Tests Work
-
-Run:
-
-```bash
-npm install
-npm run validate
-```
-
-The validator:
-
-- scans all platform folders
-- looks for `problem.json`, `solution.js`, `tests.json`, and `explanation.md`
-- runs JavaScript tests from `tests.json`
-- stores validation results in `.cache/validation-results.json`
-
-If a test fails, the problem is not marked as verified in generated output.
-
-## How JSON Is Generated
-
-Run:
-
-```bash
-npm run build
-```
-
-This generates:
-
-- `data/problems.json`
-- `data/projects.json`
-- `data/stats.json`
-- `data/metadata.json`
-
-`data/problems.json` only includes complete problems that have all required files:
-
-- `problem.json`
-- solution file
-- `tests.json`
-- `explanation.md`
-
-Each generated problem includes:
-
-- `verified`
-- `detailUrl`
-
-`detailUrl` points to the raw GitHub URL for that problem's `explanation.md`.
-
-## How SunilCraft Consumes JSON
-
-SunilCraft can pull the generated files from this repo directly:
-
-- `data/problems.json` for solved-problem listings
-- `data/stats.json` for aggregated counts
-- `data/projects.json` for public GitHub projects
-- `data/metadata.json` for build metadata
-
-Because the data is committed into the repository, SunilCraft can consume the files through GitHub raw URLs or standard GitHub content fetches without needing a separate backend or database.
-
-## How Project Sync Works
-
-`scripts/github-projects-sync.js` fetches public repositories from the GitHub user `SunilKumarKV` and writes `data/projects.json`.
-
-Included fields:
-
-- `name`
-- `description`
-- `stars`
-- `forks`
-- `language`
-- `topics`
-- `url`
-- `homepage`
-- `updatedAt`
-
-Excluded repositories:
-
-- forked repos
-- archived repos
-- private repos
-
-## Full Sync
-
-Run everything with:
+For a full repository sync:
 
 ```bash
 npm run sync
 ```
 
-That command runs validation first and then builds the generated JSON.
+That runs:
+
+1. `npm run validate`
+2. `npm run build`
+
+`npm run build` also refreshes `data/projects.json` from public GitHub repositories.
+
+## Tests
+
+Run the automated test suite:
+
+```bash
+npm test
+```
+
+The test suite covers:
+
+- `cj add`
+- `cj verify`
+- `cj publish`
+- `cj stats`
+
+## GitHub Actions
+
+The workflow:
+
+- installs dependencies
+- runs `npm test`
+- runs `npm run validate`
+- runs `npm run build`
+- commits generated `data/` changes on `main`
+
+## Notes
+
+- No mock problem data is generated into published JSON.
+- No dummy tests are added automatically.
+- Verification only succeeds for complete problems with real passing tests.

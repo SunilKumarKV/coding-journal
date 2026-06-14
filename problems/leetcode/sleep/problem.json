@@ -1,0 +1,17 @@
+{
+  "title": "Sleep",
+  "slug": "sleep",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/sleep/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "JavaScript",
+    "Promise",
+    "Async"
+  ],
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(1)",
+  "verified": true
+}

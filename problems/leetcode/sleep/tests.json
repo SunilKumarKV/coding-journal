@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "input": [20, "measure"],
+      "expected": true
+    },
+    {
+      "input": [5, "measure"],
+      "expected": true
+    }
+  ]
+}
