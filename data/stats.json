@@ -1,11 +1,11 @@
 {
-  "totalProblems": 9,
+  "totalProblems": 10,
   "verifiedProblems": 9,
   "byPlatform": {
-    "LeetCode": 9
+    "LeetCode": 10
   },
   "byLanguage": {
-    "JavaScript": 9
+    "JavaScript": 10
   },
   "byDifficulty": {
     "Easy": 9

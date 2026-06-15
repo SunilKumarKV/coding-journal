@@ -1,5 +1,19 @@
 [
   {
+    "title": "Add Two Numbers",
+    "slug": "add-two-numbers",
+    "platform": "LeetCode",
+    "difficulty": "",
+    "url": "https://leetcode.com/problems/add-two-numbers/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
+  },
+  {
     "title": "Apply Transform over Each Element in Array",
     "slug": "apply-transform-over-each-element-in-array",
     "platform": "LeetCode",
