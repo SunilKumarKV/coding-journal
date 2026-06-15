@@ -135,7 +135,7 @@
     ],
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
-    "verified": false,
+    "verified": true,
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/sleep/explanation.md"
   },
   {
