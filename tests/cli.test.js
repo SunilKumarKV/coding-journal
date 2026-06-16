@@ -36,6 +36,12 @@ test("cj add creates starter files", async () => {
   assert.equal(problemJson.slug, "sample-problem");
   assert.equal(problemJson.platform, "LeetCode");
   assert.equal(problemJson.verified, false);
+
+  const nestedSolution = await readFile(
+    path.join(rootDir, "problems", "leetcode", "sample-problem", "solutions", "javascript.js"),
+    "utf8"
+  );
+  assert.match(nestedSolution, /export default function solve/);
 });
 
 test("cj verify, publish, and stats work end to end", async () => {
@@ -64,8 +70,13 @@ test("cj verify, publish, and stats work end to end", async () => {
     "utf8"
   );
   await writeFile(
-    path.join(rootDir, "problems", "leetcode", "two-sum", "solution.js"),
+    path.join(rootDir, "problems", "leetcode", "two-sum", "solutions", "javascript.js"),
     'export default function solve(nums, target) { const seen = new Map(); for (let i = 0; i < nums.length; i += 1) { const complement = target - nums[i]; if (seen.has(complement)) { return [seen.get(complement), i]; } seen.set(nums[i], i); } return []; }\n',
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "two-sum", "solutions", "java.java"),
+    "class Solution {}\n",
     "utf8"
   );
   await writeFile(
@@ -104,6 +115,10 @@ test("cj verify, publish, and stats work end to end", async () => {
 
   assert.equal(generatedProblems.length, 1);
   assert.equal(generatedProblems[0].verified, true);
+  assert.match(generatedProblems[0].explanation, /Use a hash map/);
+  assert.equal(generatedProblems[0].solutions.length, 2);
+  assert.equal(generatedProblems[0].solutions[0].language, "Java");
+  assert.equal(generatedProblems[0].solutions[1].language, "JavaScript");
   assert.equal(generatedStats.totalProblems, 1);
   assert.equal(generatedStats.verifiedProblems, 1);
   assert.equal(generatedStats.byLanguage.JavaScript, 1);

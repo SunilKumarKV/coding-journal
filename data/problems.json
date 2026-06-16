@@ -11,6 +11,15 @@
     "timeComplexity": "",
     "spaceComplexity": "",
     "verified": false,
+    "explanation": "# Add Two Numbers\n\n## Approach\n\nThis problem represents two non-negative integers using linked lists, where each node contains a single digit and the digits are stored in reverse order.\n\nTo solve it, I traverse both linked lists simultaneously while maintaining a `carry` value.\n\nFor each iteration:\n\n1. Read the current value from both linked lists (if available).\n2. Add both values along with the carry.\n3. Create a new node containing `sum % 10`.\n4. Update the carry using `sum / 10`.\n5. Move to the next nodes.\n\nA dummy node is used to simplify the construction of the result linked list.\n\nI implemented the same algorithm in:\n\n* JavaScript\n* C\n* Java\n\nOnly the syntax differs between the languages.\n\n## Time Complexity\n\n```text\nO(max(m, n))\n```\n\nWhere:\n\n* `m` = length of the first linked list\n* `n` = length of the second linked list\n\nThe algorithm traverses each list only once.\n\n## Space Complexity\n\n```text\nO(max(m, n))\n```\n\nA new linked list is created to store the result.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nl1 = [2,4,3]\nl2 = [5,6,4]\n```\n\nThese linked lists represent:\n\n```text\n342 + 465\n```\n\n### Iteration 1\n\n```text\n2 + 5 + carry(0) = 7\n```\n\nNode value:\n\n```text\n7\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7\n```\n\n### Iteration 2\n\n```text\n4 + 6 + carry(0) = 10\n```\n\nNode value:\n\n```text\n0\n```\n\nCarry:\n\n```text\n1\n```\n\nResult:\n\n```text\n7 -> 0\n```\n\n### Iteration 3\n\n```text\n3 + 4 + carry(1) = 8\n```\n\nNode value:\n\n```text\n8\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7 -> 0 -> 8\n```\n\n### Final Output\n\n```text\n[7,0,8]\n```\n\nThis represents:\n\n```text\n807\n```\n\nBecause:\n\n```text\n342 + 465 = 807\n```\n\n## Key Learning\n\n* Using a dummy node simplifies linked list construction.\n* Carry handling follows the same logic as manual addition.\n* This pattern is commonly used in linked list arithmetic problems.\n* Traversing multiple linked lists simultaneously is an important interview technique.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "var addTwoNumbers = function(l1, l2) {\n    const dummy = new ListNode();\n  let carry = 0;\n  let cur = dummy;\n\n  while (l1 || l2 || carry) {\n    const sum = (l1?.val || 0) + (l2?.val || 0) + carry;\n\n    carry = Math.floor(sum / 10);\n    cur.next = new ListNode(sum % 10);\n    cur = cur.next;\n\n    l1 = l1?.next || null;\n    l2 = l2?.next || null;\n  }\n\n  return dummy.next;\n};",
+        "path": "problems/leetcode/add-two-numbers/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
   },
   {
@@ -29,6 +38,15 @@
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(n)",
     "verified": true,
+    "explanation": "# Apply Transform over Each Element in Array\n\n## Approach\n\nWe create a new array and simulate `Array.prototype.map` manually.\n\nFor every index:\n\n```text\nresult[i] = fn(arr[i], i)\n```\n\nAfter processing all elements, return the transformed array.\n\n## Time Complexity\n\n`O(n)`\n\nWe apply the transform function once per element.\n\n## Space Complexity\n\n`O(n)`\n\nA new output array is created.\n\n## Step-By-Step Example\n\nInput:\n\n```text\narr = [1, 2, 3]\nfn(value, index) = value + index\n```\n\n1. Index `0`: `1 + 0 = 1`\n2. Index `1`: `2 + 1 = 3`\n3. Index `2`: `3 + 2 = 5`\n4. Return `[1, 3, 5]`\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "const transformMap = {\n  plusOne: (value) => value + 1,\n  plusIndex: (value, index) => value + index,\n  constant42: () => 42\n};\n\nexport default function map(arr, fn) {\n  const transform = typeof fn === \"function\" ? fn : transformMap[fn];\n\n  if (typeof transform !== \"function\") {\n    throw new Error(\"Invalid transform\");\n  }\n\n  const transformed = [];\n\n  for (let index = 0; index < arr.length; index += 1) {\n    transformed.push(transform(arr[index], index));\n  }\n\n  return transformed;\n}\n",
+        "path": "problems/leetcode/apply-transform-over-each-element-in-array/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
   },
   {
@@ -47,6 +65,15 @@
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(1)",
     "verified": true,
+    "explanation": "# Array Reduce Transformation\n\n## Approach\n\nWe simulate how `Array.prototype.reduce` works without using the built-in method.\n\nStart with the initial value `init`, then iterate through each number in `nums` and update the accumulator with:\n\n```text\naccumulator = fn(accumulator, currentValue)\n```\n\nAfter the loop finishes, return the accumulator.\n\n## Time Complexity\n\n`O(n)`\n\nWe process each element exactly once.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the accumulator variable is maintained.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nnums = [1, 2, 3, 4]\ninit = 0\nfn = sum\n```\n\n1. Start with `result = 0`.\n2. Process `1`: `result = 0 + 1 = 1`.\n3. Process `2`: `result = 1 + 2 = 3`.\n4. Process `3`: `result = 3 + 3 = 6`.\n5. Process `4`: `result = 6 + 4 = 10`.\n6. Return `10`.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "const reducerMap = {\n  sum: (accum, curr) => accum + curr,\n  sumSquares: (accum, curr) => accum + curr * curr,\n  product: (accum, curr) => accum * curr\n};\n\nexport default function reduce(nums, fn, init) {\n  const reducer = typeof fn === \"function\" ? fn : reducerMap[fn];\n\n  if (typeof reducer !== \"function\") {\n    throw new Error(\"Invalid reducer\");\n  }\n\n  let result = init;\n\n  for (const num of nums) {\n    result = reducer(result, num);\n  }\n\n  return result;\n}\n",
+        "path": "problems/leetcode/array-reduce-transformation/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/array-reduce-transformation/explanation.md"
   },
   {
@@ -64,6 +91,15 @@
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
     "verified": true,
+    "explanation": "# Counter\n\n## Approach\n\nThis is a classic closure problem.\n\nWe store `n` in a variable and return an inner function. Every time the inner function is called:\n\n1. return the current value\n2. increment it for the next call\n\nUsing `current++` gives exactly that post-increment behavior.\n\n## Time Complexity\n\n`O(1)` per call\n\nEach invocation performs one return and one increment.\n\n## Space Complexity\n\n`O(1)`\n\nOnly one captured integer is stored.\n\n## Step-By-Step Example\n\nIf `n = 10`:\n\n1. First call returns `10`\n2. Second call returns `11`\n3. Third call returns `12`\n\nSo the sequence is `[10, 11, 12]`.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "export default function createCounter(n, calls) {\n  let current = n;\n\n  const counter = () => current++;\n\n  if (!Array.isArray(calls)) {\n    return counter;\n  }\n\n  return calls.map(() => counter());\n}\n",
+        "path": "problems/leetcode/counter/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter/explanation.md"
   },
   {
@@ -82,6 +118,15 @@
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
     "verified": true,
+    "explanation": "# Counter II\n\n## Approach\n\nThis problem is a closure design problem. We keep the current counter value inside the outer function and return methods that can read and update that value.\n\n- `increment()` adds `1`\n- `decrement()` subtracts `1`\n- `reset()` restores the original `init`\n\nBecause all three methods close over the same `current` variable, they share state correctly.\n\n## Time Complexity\n\n`O(1)` per method call\n\nEach operation updates or returns a number in constant time.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the stored counter state is used.\n\n## Step-By-Step Example\n\nIf `init = 5`:\n\n1. `current = 5`\n2. `increment()` makes it `6`\n3. `reset()` brings it back to `5`\n4. `decrement()` makes it `4`\n\nThe returned values are `[6, 5, 4]`.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "export default function createCounter(init, operations) {\n  let current = init;\n\n  const api = {\n    increment() {\n      current += 1;\n      return current;\n    },\n    decrement() {\n      current -= 1;\n      return current;\n    },\n    reset() {\n      current = init;\n      return current;\n    }\n  };\n\n  if (!Array.isArray(operations)) {\n    return api;\n  }\n\n  return operations.map((operation) => api[operation]());\n}\n",
+        "path": "problems/leetcode/counter-ii/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter-ii/explanation.md"
   },
   {
@@ -100,6 +145,15 @@
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
     "verified": true,
+    "explanation": "# Create Hello World Function\n\n## Approach\n\nReturn a new function that ignores every argument and always returns the same string:\n\n```text\n\"Hello World\"\n```\n\nThis works because the returned function simply returns a constant value.\n\n## Time Complexity\n\n`O(1)` per call\n\nThe function always returns the same string immediately.\n\n## Space Complexity\n\n`O(1)`\n\nNo extra data structure is needed.\n\n## Step-By-Step Example\n\n1. Call `createHelloWorld()`\n2. It returns a function\n3. Call that returned function with any arguments\n4. It still returns `\"Hello World\"`\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "export default function createHelloWorld(calls) {\n  const fn = (..._args) => \"Hello World\";\n\n  if (!Array.isArray(calls)) {\n    return fn;\n  }\n\n  return calls.map((args) => fn(...args));\n}\n",
+        "path": "problems/leetcode/create-hello-world-function/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/create-hello-world-function/explanation.md"
   },
   {
@@ -118,6 +172,15 @@
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(n)",
     "verified": true,
+    "explanation": "# Filter Elements from Array\n\n## Approach\n\nWe build a new result array and manually simulate `Array.prototype.filter`.\n\nFor each element:\n\n1. Call the filtering function with the current value and index.\n2. If the result is truthy, push the value into the output array.\n\nThis matches the behavior required by the problem without using the built-in `filter`.\n\n## Time Complexity\n\n`O(n)`\n\nEach array element is visited once.\n\n## Space Complexity\n\n`O(n)`\n\nIn the worst case, every element is included in the output.\n\n## Step-By-Step Example\n\nInput:\n\n```text\narr = [0, 10, 20, 30]\nfn(value) = value > 10\n```\n\n1. `0 > 10` is false, skip it.\n2. `10 > 10` is false, skip it.\n3. `20 > 10` is true, add `20`.\n4. `30 > 10` is true, add `30`.\n5. Return `[20, 30]`.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "const predicateMap = {\n  greaterThan10: (value) => value > 10,\n  firstIndex: (_, index) => index === 0,\n  plusIndexTruthy: (value, index) => value + index\n};\n\nexport default function filter(arr, fn) {\n  const predicate = typeof fn === \"function\" ? fn : predicateMap[fn];\n\n  if (typeof predicate !== \"function\") {\n    throw new Error(\"Invalid predicate\");\n  }\n\n  const filtered = [];\n\n  for (let index = 0; index < arr.length; index += 1) {\n    if (predicate(arr[index], index)) {\n      filtered.push(arr[index]);\n    }\n  }\n\n  return filtered;\n}\n",
+        "path": "problems/leetcode/filter-elements-from-array/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/filter-elements-from-array/explanation.md"
   },
   {
@@ -154,6 +217,15 @@
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
     "verified": true,
+    "explanation": "# To Be Or Not To Be\n\n## Approach\n\nWe return an object with two methods:\n\n- `toBe`\n- `notToBe`\n\nBoth methods compare against the original value captured by the outer function.\n\n- `toBe` returns `true` when values are strictly equal, otherwise throws `\"Not Equal\"`\n- `notToBe` returns `true` when values are different, otherwise throws `\"Equal\"`\n\nThis matches the expected tiny assertion helper behavior.\n\n## Time Complexity\n\n`O(1)`\n\nEach method performs a single strict comparison.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the captured value and two methods are stored.\n\n## Step-By-Step Example\n\nIf `val = 5`:\n\n1. Call `expect(5)`\n2. `toBe(5)` checks `5 === 5`, so it returns `true`\n3. `notToBe(5)` checks `5 !== 5`, which is false, so it throws `\"Equal\"`\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "export default function expect(val, assertions) {\n  const api = {\n    toBe(other) {\n      if (val === other) {\n        return true;\n      }\n\n      throw new Error(\"Not Equal\");\n    },\n    notToBe(other) {\n      if (val !== other) {\n        return true;\n      }\n\n      throw new Error(\"Equal\");\n    }\n  };\n\n  if (!Array.isArray(assertions)) {\n    return api;\n  }\n\n  return assertions.map(({ method, arg }) => {\n    try {\n      return api[method](arg);\n    } catch (error) {\n      return error.message;\n    }\n  });\n}\n",
+        "path": "problems/leetcode/to-be-or-not-to-be/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/to-be-or-not-to-be/explanation.md"
   },
   {
@@ -171,6 +243,15 @@
     "timeComplexity": "O(n)",
     "spaceComplexity": "O(n)",
     "verified": true,
+    "explanation": "# Two Sum\n\n## Hash Map Approach\n\nWe scan the array once and store each visited number in a hash map where:\n\n- the key is the number\n- the value is its index\n\nFor each number, we compute its complement:\n\n```text\ncomplement = target - currentNumber\n```\n\nIf that complement is already in the map, we have found the two indices that add up to the target. If not, we store the current number and keep going.\n\n## Time Complexity\n\n`O(n)`\n\nWe only iterate through the array once, and each hash map lookup or insert is `O(1)` on average.\n\n## Space Complexity\n\n`O(n)`\n\nIn the worst case, we may store almost every number in the hash map.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nnums = [2, 7, 11, 15]\ntarget = 9\n```\n\n1. Start with an empty map.\n2. Look at `2`.\n   `complement = 9 - 2 = 7`\n   `7` is not in the map, so store `2 -> 0`.\n3. Look at `7`.\n   `complement = 9 - 7 = 2`\n   `2` is already in the map at index `0`.\n4. Return `[0, 1]`.\n\nThis gives the indices of the two numbers whose sum is `9`.\n",
+    "solutions": [
+      {
+        "language": "JavaScript",
+        "filename": "solution.js",
+        "code": "export default function solve(nums, target) {\n  const seen = new Map();\n\n  for (let index = 0; index < nums.length; index += 1) {\n    const value = nums[index];\n    const complement = target - value;\n\n    if (seen.has(complement)) {\n      return [seen.get(complement), index];\n    }\n\n    seen.set(value, index);\n  }\n\n  return [];\n}\n",
+        "path": "problems/leetcode/two-sum/solution.js"
+      }
+    ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/two-sum/explanation.md"
   }
 ]

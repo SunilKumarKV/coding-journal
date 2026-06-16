@@ -87,9 +87,10 @@ Creates a new problem folder and starter files:
 ```text
 problems/<platform>/<slug>/
 ├── problem.json
-├── solution.js
+├── explanation.md
 ├── tests.json
-└── explanation.md
+└── solutions/
+    └── javascript.js
 ```
 
 Example:
@@ -101,7 +102,7 @@ node ./bin/cj.js add leetcode two-sum
 What it writes:
 
 - `problem.json` with known fields derived from the platform and slug
-- `solution.js` starter exporting a default function
+- `solutions/javascript.js` starter exporting a default function
 - `tests.json` with an empty `tests` array
 - `explanation.md` with a documentation template
 
@@ -187,7 +188,13 @@ Typical `tests.json`:
 }
 ```
 
-`solution.js` must export a default function.
+The preferred JavaScript solution path is `solutions/javascript.js`, and it must export a default function.
+
+Backward compatibility:
+
+- older problems using `solution.js` are still supported
+- build reads both legacy `solution.js` and all files inside `solutions/`
+- validation only executes a JavaScript solution for now
 
 ## Publishing Flow
 
@@ -203,6 +210,29 @@ That runs:
 2. `npm run build`
 
 `npm run build` also refreshes `data/projects.json` from public GitHub repositories.
+
+## Multi-Language Solutions
+
+Problem folders can now store multiple languages:
+
+```text
+problems/<platform>/<slug>/
+├── problem.json
+├── explanation.md
+├── tests.json
+└── solutions/
+    ├── javascript.js
+    ├── java.java
+    └── c.c
+```
+
+Generated `data/problems.json` includes:
+
+- full explanation markdown content
+- a `solutions` array with:
+  `language`, `filename`, `code`, and `path`
+
+Only JavaScript is validated today when a JavaScript solution is present. Java and C files are published but not executed yet.
 
 ## Featured Projects
 

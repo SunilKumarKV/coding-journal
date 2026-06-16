@@ -3,7 +3,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { Command } from "commander";
-import { PLATFORM_CONFIG } from "../lib/constants.js";
+import { JAVASCRIPT_SOLUTION_FILENAME, PLATFORM_CONFIG, SOLUTIONS_DIRECTORY } from "../lib/constants.js";
 import {
   buildExplanationTemplate,
   buildProblemTemplate,
@@ -57,9 +57,14 @@ program
     }
 
     await mkdir(problemDir, { recursive: true });
+    await mkdir(path.join(problemDir, SOLUTIONS_DIRECTORY), { recursive: true });
     await Promise.all([
       writeJson(path.join(problemDir, "problem.json"), buildProblemTemplate(platformKey, slug)),
-      writeFile(path.join(problemDir, "solution.js"), buildSolutionTemplate(slug), "utf8"),
+      writeFile(
+        path.join(problemDir, SOLUTIONS_DIRECTORY, JAVASCRIPT_SOLUTION_FILENAME),
+        buildSolutionTemplate(slug),
+        "utf8"
+      ),
       writeFile(path.join(problemDir, "tests.json"), buildTestsTemplate(), "utf8"),
       writeFile(path.join(problemDir, "explanation.md"), buildExplanationTemplate(slugToTitle(slug)), "utf8")
     ]);
