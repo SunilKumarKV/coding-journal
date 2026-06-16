@@ -2,12 +2,17 @@
   "title": "Add Two Numbers",
   "slug": "add-two-numbers",
   "platform": "LeetCode",
-  "difficulty": "",
+  "difficulty": "Mid",
   "url": "https://leetcode.com/problems/add-two-numbers/",
   "status": "Solved",
   "language": "JavaScript",
-  "tags": [],
-  "timeComplexity": "",
-  "spaceComplexity": "",
+  "tags": [
+    "Linked List",
+    "Math",
+    "Simulation",
+    "Recursion"
+  ],
+  "timeComplexity": "O(max(m, n))",
+  "spaceComplexity": "O(1)",
   "verified": false
 }

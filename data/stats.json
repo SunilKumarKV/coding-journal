@@ -8,12 +8,16 @@
     "JavaScript": 10
   },
   "byDifficulty": {
+    "Mid": 1,
     "Easy": 9
   },
   "byTag": {
+    "Linked List": 1,
+    "Math": 1,
+    "Simulation": 4,
+    "Recursion": 1,
     "Array": 4,
     "Function": 5,
-    "Simulation": 3,
     "JavaScript": 5,
     "Closure": 3,
     "Design": 2,

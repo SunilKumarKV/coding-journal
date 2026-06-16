@@ -3,21 +3,38 @@
     "title": "Add Two Numbers",
     "slug": "add-two-numbers",
     "platform": "LeetCode",
-    "difficulty": "",
+    "difficulty": "Mid",
     "url": "https://leetcode.com/problems/add-two-numbers/",
     "status": "Solved",
     "language": "JavaScript",
-    "tags": [],
-    "timeComplexity": "",
-    "spaceComplexity": "",
+    "tags": [
+      "Linked List",
+      "Math",
+      "Simulation",
+      "Recursion"
+    ],
+    "timeComplexity": "O(max(m, n))",
+    "spaceComplexity": "O(1)",
     "verified": false,
     "explanation": "# Add Two Numbers\n\n## Approach\n\nThis problem represents two non-negative integers using linked lists, where each node contains a single digit and the digits are stored in reverse order.\n\nTo solve it, I traverse both linked lists simultaneously while maintaining a `carry` value.\n\nFor each iteration:\n\n1. Read the current value from both linked lists (if available).\n2. Add both values along with the carry.\n3. Create a new node containing `sum % 10`.\n4. Update the carry using `sum / 10`.\n5. Move to the next nodes.\n\nA dummy node is used to simplify the construction of the result linked list.\n\nI implemented the same algorithm in:\n\n* JavaScript\n* C\n* Java\n\nOnly the syntax differs between the languages.\n\n## Time Complexity\n\n```text\nO(max(m, n))\n```\n\nWhere:\n\n* `m` = length of the first linked list\n* `n` = length of the second linked list\n\nThe algorithm traverses each list only once.\n\n## Space Complexity\n\n```text\nO(max(m, n))\n```\n\nA new linked list is created to store the result.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nl1 = [2,4,3]\nl2 = [5,6,4]\n```\n\nThese linked lists represent:\n\n```text\n342 + 465\n```\n\n### Iteration 1\n\n```text\n2 + 5 + carry(0) = 7\n```\n\nNode value:\n\n```text\n7\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7\n```\n\n### Iteration 2\n\n```text\n4 + 6 + carry(0) = 10\n```\n\nNode value:\n\n```text\n0\n```\n\nCarry:\n\n```text\n1\n```\n\nResult:\n\n```text\n7 -> 0\n```\n\n### Iteration 3\n\n```text\n3 + 4 + carry(1) = 8\n```\n\nNode value:\n\n```text\n8\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7 -> 0 -> 8\n```\n\n### Final Output\n\n```text\n[7,0,8]\n```\n\nThis represents:\n\n```text\n807\n```\n\nBecause:\n\n```text\n342 + 465 = 807\n```\n\n## Key Learning\n\n* Using a dummy node simplifies linked list construction.\n* Carry handling follows the same logic as manual addition.\n* This pattern is commonly used in linked list arithmetic problems.\n* Traversing multiple linked lists simultaneously is an important interview technique.\n",
     "solutions": [
       {
+        "language": "C",
+        "filename": "solution.c",
+        "code": "struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {\n    struct ListNode dummy = {0, NULL}, *cur = &dummy;\n    int carry = 0;\n    while (l1 || l2 || carry) {\n        if (l1) { carry += l1->val; l1 = l1->next; }\n        if (l2) { carry += l2->val; l2 = l2->next; }\n        cur->next = malloc(sizeof(struct ListNode));\n        cur->next->val = carry % 10;\n        cur->next->next = NULL;\n        carry /= 10;\n        cur = cur->next;\n    }\n    return dummy.next;\n}",
+        "path": "problems/leetcode/add-two-numbers/solutions/solution.c"
+      },
+      {
+        "language": "Java",
+        "filename": "solution.java",
+        "code": "class Solution {\n    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {\n        ListNode dummy = new ListNode(0), cur = dummy;\n        int carry = 0;\n        while (l1 != null || l2 != null || carry > 0) {\n            if (l1 != null) { carry += l1.val; l1 = l1.next; }\n            if (l2 != null) { carry += l2.val; l2 = l2.next; }\n            cur.next = new ListNode(carry % 10);\n            carry /= 10;\n            cur = cur.next;\n        }\n        return dummy.next;\n    }\n}",
+        "path": "problems/leetcode/add-two-numbers/solutions/solution.java"
+      },
+      {
         "language": "JavaScript",
         "filename": "solution.js",
         "code": "var addTwoNumbers = function(l1, l2) {\n    const dummy = new ListNode();\n  let carry = 0;\n  let cur = dummy;\n\n  while (l1 || l2 || carry) {\n    const sum = (l1?.val || 0) + (l2?.val || 0) + carry;\n\n    carry = Math.floor(sum / 10);\n    cur.next = new ListNode(sum % 10);\n    cur = cur.next;\n\n    l1 = l1?.next || null;\n    l2 = l2?.next || null;\n  }\n\n  return dummy.next;\n};",
-        "path": "problems/leetcode/add-two-numbers/solution.js"
+        "path": "problems/leetcode/add-two-numbers/solutions/solution.js"
       }
     ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
