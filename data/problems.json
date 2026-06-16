@@ -33,7 +33,7 @@
       {
         "language": "JavaScript",
         "filename": "solution.js",
-        "code": "var addTwoNumbers = function(l1, l2) {\n    const dummy = new ListNode();\n  let carry = 0;\n  let cur = dummy;\n\n  while (l1 || l2 || carry) {\n    const sum = (l1?.val || 0) + (l2?.val || 0) + carry;\n\n    carry = Math.floor(sum / 10);\n    cur.next = new ListNode(sum % 10);\n    cur = cur.next;\n\n    l1 = l1?.next || null;\n    l2 = l2?.next || null;\n  }\n\n  return dummy.next;\n};",
+        "code": "class ListNode {\n  constructor(val = 0, next = null) {\n    this.val = val;\n    this.next = next;\n  }\n}\n\nexport default function addTwoNumbers(l1, l2) {\n  const dummy = new ListNode();\n  let carry = 0;\n  let cur = dummy;\n\n  while (l1 || l2 || carry) {\n    const sum = (l1?.val || 0) + (l2?.val || 0) + carry;\n\n    carry = Math.floor(sum / 10);\n    cur.next = new ListNode(sum % 10);\n    cur = cur.next;\n\n    l1 = l1?.next || null;\n    l2 = l2?.next || null;\n  }\n\n  return dummy.next;\n}",
         "path": "problems/leetcode/add-two-numbers/solutions/solution.js"
       }
     ],

@@ -1,5 +1,12 @@
-var addTwoNumbers = function(l1, l2) {
-    const dummy = new ListNode();
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
+export default function addTwoNumbers(l1, l2) {
+  const dummy = new ListNode();
   let carry = 0;
   let cur = dummy;
 
@@ -15,4 +22,4 @@ var addTwoNumbers = function(l1, l2) {
   }
 
   return dummy.next;
-};
+}
