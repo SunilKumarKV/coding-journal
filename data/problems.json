@@ -201,6 +201,41 @@
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/filter-elements-from-array/explanation.md"
   },
   {
+    "title": "Palindrome Number",
+    "slug": "palindrome-number",
+    "platform": "LeetCode",
+    "difficulty": "",
+    "url": "https://leetcode.com/problems/palindrome-number/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "explanation": "# Palindrome Number\n\n## Approach\n \nThis problem asks us to check whether an integer reads the same forwards and backwards, without converting it to a string.\n \nThe idea is to reverse the number digit by digit and compare it with the original.\n \nFor each iteration:\n \n1. If `x` is negative, return `false` immediately, since negative numbers can never be palindromes (the `-` sign breaks symmetry).\n2. Store the original value of `x` in `palindrome` for comparison later.\n3. Extract the last digit using `x % 10` and store it in `remainder`.\n4. Build the reversed number: `reverse = reverse * 10 + remainder`.\n5. Remove the last digit from `x` using `x / 10`.\n6. Repeat until `x` becomes 0.\n7. Compare `palindrome` with `reverse`. If they match, it's a palindrome.\nA `long long` is used for `reverse` to safely hold the reversed value even if intermediate overflow would occur for numbers near the `int` boundary (this is a common safe practice, though it doesn't actually rescue overflow for the true edge case the same way the O(1)/half-reversal approach does).\n \nI implemented the same algorithm in:\n \n* C\n* Python\n* JavaScript\n* Java\nOnly the syntax differs between the languages.\n \n## Time Complexity\n \n```text\nO(log10(x))\n```\n \nThe number of iterations equals the number of digits in `x`, which is proportional to `log10(x)`.\n \n## Space Complexity\n \n```text\nO(1)\n```\n \nOnly a few integer variables are used; no extra data structures are needed.\n \n## Step-By-Step Example\n \nInput:\n \n```text\nx = 121\n```\n \n`palindrome = 121`, `reverse = 0`\n \n### Iteration 1\n \n```text\nremainder = 121 % 10 = 1\nreverse = 0 * 10 + 1 = 1\nx = 121 / 10 = 12\n```\n \n### Iteration 2\n \n```text\nremainder = 12 % 10 = 2\nreverse = 1 * 10 + 2 = 12\nx = 12 / 10 = 1\n```\n \n### Iteration 3\n \n```text\nremainder = 1 % 10 = 1\nreverse = 12 * 10 + 1 = 121\nx = 1 / 10 = 0\n```\n \n`x` is now 0, so the loop stops.\n \n### Final Comparison\n \n```text\npalindrome = 121\nreverse = 121\n121 == 121 -> true\n```\n \n### Final Output\n \n```text\ntrue\n```\n \n### Negative Number Example\n \nInput:\n \n```text\nx = -121\n```\n \nSince `x < 0`, the function returns `false` immediately without entering the loop.\n \n## Key Learning\n \n* Negative numbers are never palindromes because of the leading minus sign.\n* Reversing digits using `% 10` and `/ 10` is a fundamental technique for digit manipulation problems.\n* Comparing the reversed number to the original avoids string conversion entirely.\n* A common follow-up optimization is to reverse only half the digits and compare the two halves, which avoids any risk of overflow and slightly reduces work.",
+    "solutions": [
+      {
+        "language": "C",
+        "filename": "c.c",
+        "code": "bool isPalindrome(int x) {\n    if(x < 0){\n        return false;\n    }\n    int remainder, palindrome;\n    long long reverse = 0;\n    palindrome = x;\n    while(x != 0){\n        remainder = x % 10;\n        reverse = reverse * 10 + remainder;\n        x = x / 10;\n    }\n    return (palindrome == reverse);\n}",
+        "path": "problems/leetcode/palindrome-number/solutions/c.c"
+      },
+      {
+        "language": "Java",
+        "filename": "java.java",
+        "code": "class Solution {\n    public boolean isPalindrome(int x) {\n    if(x < 0){\n        return false;\n    }\n    int remainder, palindrome;\n    int reverse = 0;\n    palindrome = x;\n    while(x != 0){\n        remainder = x % 10;\n        reverse = reverse * 10 + remainder;\n        x = x / 10;\n    }\n    return (palindrome == reverse);\n    }\n}",
+        "path": "problems/leetcode/palindrome-number/solutions/java.java"
+      },
+      {
+        "language": "JavaScript",
+        "filename": "javascript.js",
+        "code": "export default isPalindrome = function(x) {\n    if(x < 0){\n        return false;\n    }\n    let remainder, palindrome;\n    let reverse = 0;\n    palindrome = x;\n    while(x > 0){\n        remainder = x % 10;\n        reverse = (reverse * 10) + remainder;\n        x = Math.floor(x / 10);\n    }\n    return (palindrome == reverse);\n    };\n",
+        "path": "problems/leetcode/palindrome-number/solutions/javascript.js"
+      }
+    ],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/palindrome-number/explanation.md"
+  },
+  {
     "title": "Sleep",
     "slug": "sleep",
     "platform": "LeetCode",

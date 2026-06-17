@@ -2,10 +2,10 @@
   "totalProblems": 10,
   "verifiedProblems": 8,
   "byPlatform": {
-    "LeetCode": 10
+    "LeetCode": 11
   },
   "byLanguage": {
-    "JavaScript": 10
+    "JavaScript": 11
   },
   "byDifficulty": {
     "Mid": 1,
@@ -24,6 +24,5 @@
     "Promise": 1,
     "Async": 1,
     "Hash Map": 1
-  },
-  "totalProjects": 17
+  }
 }
