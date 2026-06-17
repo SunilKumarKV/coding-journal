@@ -250,7 +250,7 @@
     ],
     "timeComplexity": "O(1)",
     "spaceComplexity": "O(1)",
-    "verified": false,
+    "verified": true,
     "explanation": "# Sleep\n\n## Approach\n\nThe problem asks us to create an async sleep helper using JavaScript promises. The clean way to do this is to wrap `setTimeout` inside a `Promise` and resolve it after `millis` milliseconds.\n\n```js\nnew Promise((resolve) => setTimeout(resolve, millis));\n```\n\nWhen used with `await`, execution pauses until the promise resolves.\n\n## Time Complexity\n\n`O(1)`\n\nWe create one promise and one timer.\n\n## Space Complexity\n\n`O(1)`\n\nOnly constant extra space is used.\n\n## Step-By-Step Example\n\nIf `millis = 100`:\n\n1. Call `sleep(100)`.\n2. Create a promise.\n3. Register a `setTimeout` callback for 100 milliseconds later.\n4. Return the promise immediately.\n5. After 100 milliseconds, `resolve()` is called.\n6. Any `await sleep(100)` continues execution.\n",
     "solutions": [
       {
