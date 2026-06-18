@@ -78,6 +78,40 @@ Or use the binary directly:
 node ./bin/cj.js --help
 ```
 
+## Browser Extension
+
+The repository includes a local Chrome extension at:
+
+```text
+extensions/leetcode-capture/
+```
+
+Purpose:
+
+- capture real accepted LeetCode submissions
+- send them to the local receiver at `http://localhost:4444/capture`
+
+Manual install steps:
+
+1. Open Chrome and go to `chrome://extensions`.
+2. Enable `Developer mode`.
+3. Click `Load unpacked`.
+4. Select `extensions/leetcode-capture`.
+
+Manual testing steps:
+
+1. Start the local receiver:
+   `node ./bin/cj.js serve`
+2. Open an accepted LeetCode submission page where the code is visible.
+3. Wait for the extension to capture it.
+4. Look for:
+   `Saved to coding-journal`
+5. Confirm the problem folder and solution file were created or updated locally.
+
+Extension-specific docs:
+
+- [extensions/leetcode-capture/README.md](/Users/sunilkumarkv/Desktop/Projects/coding-journal/extensions/leetcode-capture/README.md:1)
+
 ## CLI Commands
 
 ### `cj add <platform> <slug>`
@@ -264,6 +298,56 @@ Runs validation and build, then prints a concise summary.
 node ./bin/cj.js sync
 ```
 
+### `cj serve`
+
+Starts the local capture server for browser-extension submissions.
+
+Server:
+
+```text
+http://localhost:4444
+```
+
+Endpoint:
+
+```text
+POST /capture
+```
+
+Usage:
+
+```bash
+node ./bin/cj.js serve
+```
+
+Sample `curl` test:
+
+```bash
+curl -X POST http://localhost:4444/capture \
+  -H "Content-Type: application/json" \
+  -d '{
+    "platform": "leetcode",
+    "slug": "add-two-numbers",
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/add-two-numbers/",
+    "tags": ["Linked List", "Math"],
+    "language": "JavaScript",
+    "code": "export default function solve() { return null; }",
+    "acceptedAt": "2026-06-16T10:00:00.000Z"
+  }'
+```
+
+Behavior:
+
+- creates or updates `problem.json`
+- saves the provided real code into `solutions/`
+- updates `problem.json.submissions`
+- creates `tests.json` only if missing
+- creates `explanation.md` only if missing
+- does not overwrite an existing solution file
+- runs the existing sync flow after capture
+
 ## Problem File Format
 
 Typical `problem.json`:
@@ -442,6 +526,7 @@ The test suite covers:
 - `cj add`
 - `cj pull`
 - `cj import-submission`
+- `cj serve` capture logic
 - `cj verify`
 - `cj publish`
 - `cj stats`

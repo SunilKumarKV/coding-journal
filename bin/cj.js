@@ -2,6 +2,7 @@
 
 import { Command } from "commander";
 import { DEFAULT_SOLUTION_TEMPLATES, PLATFORM_CONFIG } from "../lib/constants.js";
+import { startCaptureServer } from "../lib/capture-server.js";
 import {
   createProblemScaffold,
   buildProblemTemplate,
@@ -214,6 +215,23 @@ program
     console.log(`Platforms: ${result.summary.platforms.join(", ")}`);
     console.log(`Languages: ${result.summary.languages.join(", ")}`);
     console.log(`Generated data files: ${result.summary.generatedFiles.join(", ")}`);
+  });
+
+program
+  .command("serve")
+  .description("Start the local capture server for browser extension submissions")
+  .action(async (command) => {
+    const rootDir = getCommandRoot(command);
+    const server = await startCaptureServer({ rootDir, port: 4444 });
+
+    console.log("Capture server listening at http://localhost:4444");
+
+    const shutdown = () => {
+      server.close(() => process.exit(0));
+    };
+
+    process.on("SIGINT", shutdown);
+    process.on("SIGTERM", shutdown);
   });
 
 program.parseAsync(process.argv);
