@@ -108,6 +108,78 @@ What it writes:
 
 The command does not invent fake tests or fake problem metadata beyond what can be derived from the slug and chosen platform.
 
+### `cj import <platform> <username>`
+
+Imports solved problems using only public platform data.
+
+Examples:
+
+```bash
+node ./bin/cj.js import leetcode Sunil-Kumar-K-V
+node ./bin/cj.js import codeforces tourist
+```
+
+Current behavior:
+
+- `leetcode`: imports public recent accepted submissions and warns if full solved history is not publicly exposed
+- `codeforces`: imports accepted submissions through the public Codeforces API and deduplicates by problem
+- `codechef`: safe fallback with no fake solved problems
+- `hackerrank`: safe fallback with no fake solved problems
+
+Rules:
+
+- creates missing folders only
+- does not overwrite existing files unless `--force`
+- uses public data only
+- does not require login, cookies, or private sessions
+
+### `cj import-problem <platform> <slug-or-url>`
+
+Imports one problem by slug or URL and creates a full template set.
+
+Examples:
+
+```bash
+node ./bin/cj.js import-problem leetcode add-two-numbers
+node ./bin/cj.js import-problem leetcode https://leetcode.com/problems/add-two-numbers/
+node ./bin/cj.js import-problem codechef https://www.codechef.com/problems/FLOW001
+```
+
+Generated structure:
+
+```text
+problems/<platform>/<slug>/
+├── problem.json
+├── explanation.md
+├── tests.json
+└── solutions/
+    ├── javascript.js
+    ├── java.java
+    └── c.c
+```
+
+It does not overwrite existing files unless `--force`.
+
+### `cj explain <platform> <slug>`
+
+Generates `explanation.md` deterministically from:
+
+- `problem.json`
+- `tests.json`
+- `solutions/*`
+
+Example:
+
+```bash
+node ./bin/cj.js explain leetcode add-two-numbers
+```
+
+Rules:
+
+- does not overwrite `explanation.md` unless `--force`
+- uses the first test case when available
+- generates a useful skeleton even when no solution is present
+
 ### `cj verify`
 
 Runs all tests for complete problem folders and updates source verification state.
@@ -153,6 +225,14 @@ Run:
 
 ```bash
 node ./bin/cj.js stats
+```
+
+### `cj sync`
+
+Runs validation and build, then prints a concise summary.
+
+```bash
+node ./bin/cj.js sync
 ```
 
 ## Problem File Format
@@ -233,6 +313,37 @@ Generated `data/problems.json` includes:
   `language`, `filename`, `code`, and `path`
 
 Only JavaScript is validated today when a JavaScript solution is present. Java and C files are published but not executed yet.
+
+## Import Workflows
+
+LeetCode auto import:
+
+```bash
+node ./bin/cj.js import leetcode Sunil-Kumar-K-V
+node ./bin/cj.js sync
+```
+
+Single problem import:
+
+```bash
+node ./bin/cj.js import-problem leetcode add-two-numbers
+node ./bin/cj.js explain leetcode add-two-numbers
+node ./bin/cj.js sync
+```
+
+Codeforces import:
+
+```bash
+node ./bin/cj.js import codeforces tourist
+node ./bin/cj.js sync
+```
+
+Manual fallback platforms:
+
+```bash
+node ./bin/cj.js import-problem codechef <url>
+node ./bin/cj.js import-problem hackerrank <url>
+```
 
 ## Featured Projects
 

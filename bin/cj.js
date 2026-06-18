@@ -1,22 +1,18 @@
 #!/usr/bin/env node
 
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
 import { Command } from "commander";
-import { JAVASCRIPT_SOLUTION_FILENAME, PLATFORM_CONFIG, SOLUTIONS_DIRECTORY } from "../lib/constants.js";
+import { DEFAULT_SOLUTION_TEMPLATES, PLATFORM_CONFIG } from "../lib/constants.js";
 import {
-  buildExplanationTemplate,
+  createProblemScaffold,
   buildProblemTemplate,
-  buildSolutionTemplate,
-  buildTestsTemplate,
-  ensureBaseStructure,
-  exists,
   normalizePlatform,
   resolveRootDir,
-  slugToTitle,
-  writeJson
+  slugify
 } from "../lib/journal.js";
+import { explainProblem } from "../lib/explain-problem.js";
+import { importPlatformProblems, importSingleProblem } from "../lib/import-problems.js";
 import { publishJournalData } from "../lib/publish-journal.js";
+import { runSync } from "../lib/run-sync.js";
 import { validateProblems } from "../lib/validate-problems.js";
 
 const program = new Command();
@@ -46,30 +42,77 @@ program
       return;
     }
 
-    await ensureBaseStructure(rootDir);
-    const platform = PLATFORM_CONFIG[platformKey];
-    const problemDir = path.join(rootDir, "problems", platform.directory, slug);
+    const result = await createProblemScaffold(rootDir, platformKey, slugify(slug), buildProblemTemplate(platformKey, slugify(slug)), {
+      solutionFilenames: ["javascript.js"]
+    });
+    console.log(`Created ${result.problemDir.replace(`${rootDir}/`, "")}`);
+  });
 
-    if (await exists(problemDir)) {
-      console.error(`Problem already exists: ${problemDir}`);
-      process.exitCode = 1;
+program
+  .command("import")
+  .argument("<platform>", "platform key such as leetcode or codeforces")
+  .argument("<username>", "public username or handle")
+  .option("--force", "overwrite existing generated files", false)
+  .description("Import solved problems from a public coding platform profile")
+  .action(async (platformInput, username, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await importPlatformProblems(platformInput, username, {
+      rootDir,
+      force: options.force
+    });
+
+    console.log(`Fetched ${result.totalFetched} public solved problem(s).`);
+    console.log(`Created ${result.importedCount} problem folder(s).`);
+
+    if (result.skipped.length > 0) {
+      console.log(`Skipped existing folders: ${result.skipped.length}`);
+    }
+
+    if (result.warning) {
+      console.warn(result.warning);
+    }
+  });
+
+program
+  .command("import-problem")
+  .argument("<platform>", "platform key such as leetcode or codeforces")
+  .argument("<slug-or-url>", "problem slug or full URL")
+  .option("--force", "overwrite existing generated files", false)
+  .description("Import a single problem and create solution/explanation templates")
+  .action(async (platformInput, slugOrUrl, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await importSingleProblem(platformInput, slugOrUrl, {
+      rootDir,
+      force: options.force
+    });
+
+    console.log(`Prepared ${result.problemDir.replace(`${rootDir}/`, "")}`);
+    console.log(`Created files: ${result.created.length}`);
+
+    if (result.skipped.length > 0) {
+      console.log(`Skipped existing files: ${result.skipped.length}`);
+    }
+  });
+
+program
+  .command("explain")
+  .argument("<platform>", "platform key")
+  .argument("<slug>", "problem slug")
+  .option("--force", "overwrite existing explanation.md", false)
+  .description("Generate a deterministic explanation.md from problem files")
+  .action(async (platformInput, slug, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await explainProblem(platformInput, slug, {
+      rootDir,
+      force: options.force
+    });
+
+    if (!result.written) {
+      console.warn(result.reason);
       return;
     }
 
-    await mkdir(problemDir, { recursive: true });
-    await mkdir(path.join(problemDir, SOLUTIONS_DIRECTORY), { recursive: true });
-    await Promise.all([
-      writeJson(path.join(problemDir, "problem.json"), buildProblemTemplate(platformKey, slug)),
-      writeFile(
-        path.join(problemDir, SOLUTIONS_DIRECTORY, JAVASCRIPT_SOLUTION_FILENAME),
-        buildSolutionTemplate(slug),
-        "utf8"
-      ),
-      writeFile(path.join(problemDir, "tests.json"), buildTestsTemplate(), "utf8"),
-      writeFile(path.join(problemDir, "explanation.md"), buildExplanationTemplate(slugToTitle(slug)), "utf8")
-    ]);
-
-    console.log(`Created ${path.relative(rootDir, problemDir)}`);
+    console.log(`Generated ${result.explanationPath.replace(`${rootDir}/`, "")}`);
   });
 
 program
@@ -101,6 +144,21 @@ program
     console.log(`Verified problems: ${result.stats.verifiedProblems}`);
     console.log(`Platform counts: ${JSON.stringify(result.stats.byPlatform)}`);
     console.log(`Language counts: ${JSON.stringify(result.stats.byLanguage)}`);
+  });
+
+program
+  .command("sync")
+  .description("Run validation and build, then print a concise sync summary")
+  .action(async (command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await runSync({ rootDir });
+
+    console.log(`Total problems: ${result.summary.totalProblems}`);
+    console.log(`Verified problems: ${result.summary.verifiedProblems}`);
+    console.log(`Unverified problems: ${result.summary.unverifiedProblems}`);
+    console.log(`Platforms: ${result.summary.platforms.join(", ")}`);
+    console.log(`Languages: ${result.summary.languages.join(", ")}`);
+    console.log(`Generated data files: ${result.summary.generatedFiles.join(", ")}`);
   });
 
 program.parseAsync(process.argv);
