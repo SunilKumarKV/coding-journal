@@ -108,30 +108,59 @@ What it writes:
 
 The command does not invent fake tests or fake problem metadata beyond what can be derived from the slug and chosen platform.
 
-### `cj import <platform> <username>`
+### `cj pull <platform> <username>`
 
-Imports solved problems using only public platform data.
+Pulls accepted-submission metadata using only public platform data.
 
 Examples:
 
 ```bash
-node ./bin/cj.js import leetcode Sunil-Kumar-K-V
-node ./bin/cj.js import codeforces tourist
+node ./bin/cj.js pull leetcode Sunil-Kumar-K-V
+node ./bin/cj.js pull codeforces tourist
 ```
 
 Current behavior:
 
-- `leetcode`: imports public recent accepted submissions and warns if full solved history is not publicly exposed
-- `codeforces`: imports accepted submissions through the public Codeforces API and deduplicates by problem
-- `codechef`: safe fallback with no fake solved problems
-- `hackerrank`: safe fallback with no fake solved problems
+- `leetcode`: imports public recent accepted submissions and stores metadata only when code is not publicly available
+- `codeforces`: imports accepted submissions through the public Codeforces API, deduplicates by problem, and stores submission metadata
+- `codechef`: safe fallback with no fake solved problems or fake code
+- `hackerrank`: safe fallback with no fake solved problems or fake code
 
 Rules:
 
 - creates missing folders only
-- does not overwrite existing files unless `--force`
+- merges metadata into existing folders
 - uses public data only
 - does not require login, cookies, or private sessions
+- does not invent or generate solution code
+
+### `cj import-submission <platform> <slug> --language <language> --file <path>`
+
+Attaches a real accepted submission file to an existing problem.
+
+Examples:
+
+```bash
+node ./bin/cj.js import-submission leetcode add-two-numbers --language javascript --file ./accepted/add-two-numbers.js
+node ./bin/cj.js import-submission leetcode add-two-numbers --language java --file ./accepted/AddTwoNumbers.java
+node ./bin/cj.js import-submission leetcode add-two-numbers --language c --file ./accepted/add_two_numbers.c
+```
+
+Supported import languages:
+
+- JavaScript
+- TypeScript
+- Java
+- C
+- C++
+- Python
+
+Rules:
+
+- copies the provided file into `solutions/`
+- updates `problem.json.submissions`
+- never overwrites real code unless `--force`
+- may replace the generated starter template with your real accepted code
 
 ### `cj import-problem <platform> <slug-or-url>`
 
@@ -187,7 +216,7 @@ Runs all tests for complete problem folders and updates source verification stat
 Behavior:
 
 - scans complete problems with all required files
-- imports `solution.js`
+- imports JavaScript solutions when a real JavaScript file exists
 - runs tests from `tests.json`
 - writes `.cache/validation-results.json`
 - updates each problem's `problem.json` with `verified: true` or `verified: false`
@@ -241,16 +270,22 @@ Typical `problem.json`:
 
 ```json
 {
-  "title": "Two Sum",
-  "slug": "two-sum",
-  "platform": "LeetCode",
-  "difficulty": "Easy",
-  "url": "https://leetcode.com/problems/two-sum/",
-  "status": "Solved",
-  "language": "JavaScript",
-  "tags": ["Array", "Hash Map"],
-  "timeComplexity": "O(n)",
-  "spaceComplexity": "O(n)",
+  "platform": "leetcode",
+  "slug": "add-two-numbers",
+  "title": "Add Two Numbers",
+  "difficulty": "Medium",
+  "url": "https://leetcode.com/problems/add-two-numbers/",
+  "tags": ["Linked List", "Math"],
+  "solvedAt": "2026-06-18T00:00:00.000Z",
+  "submissions": [
+    {
+      "language": "JavaScript",
+      "submittedAt": "2026-06-18T00:00:00.000Z",
+      "source": "leetcode",
+      "codeAvailable": true,
+      "filename": "solutions/javascript.js"
+    }
+  ],
   "verified": true
 }
 ```
@@ -309,32 +344,45 @@ problems/<platform>/<slug>/
 Generated `data/problems.json` includes:
 
 - full explanation markdown content
-- a `solutions` array with:
-  `language`, `filename`, `code`, and `path`
+- a `solutions` array with `language`, `filename`, `code`, and `path`
+- a `submissions` array copied from `problem.json`
 
 Only JavaScript is validated today when a JavaScript solution is present. Java and C files are published but not executed yet.
 
 ## Import Workflows
 
-LeetCode auto import:
+LeetCode metadata pull:
 
 ```bash
-node ./bin/cj.js import leetcode Sunil-Kumar-K-V
+node ./bin/cj.js pull leetcode Sunil-Kumar-K-V
 node ./bin/cj.js sync
 ```
 
-Single problem import:
+Attach accepted code:
+
+```bash
+node ./bin/cj.js import-submission leetcode add-two-numbers --language javascript --file ./accepted/add-two-numbers.js
+node ./bin/cj.js import-submission leetcode add-two-numbers --language java --file ./accepted/AddTwoNumbers.java
+node ./bin/cj.js import-submission leetcode add-two-numbers --language c --file ./accepted/add_two_numbers.c
+```
+
+Generate explanation:
+
+```bash
+node ./bin/cj.js explain leetcode add-two-numbers
+```
+
+Single problem template import:
 
 ```bash
 node ./bin/cj.js import-problem leetcode add-two-numbers
-node ./bin/cj.js explain leetcode add-two-numbers
 node ./bin/cj.js sync
 ```
 
-Codeforces import:
+Codeforces pull:
 
 ```bash
-node ./bin/cj.js import codeforces tourist
+node ./bin/cj.js pull codeforces tourist
 node ./bin/cj.js sync
 ```
 
@@ -392,6 +440,8 @@ npm test
 The test suite covers:
 
 - `cj add`
+- `cj pull`
+- `cj import-submission`
 - `cj verify`
 - `cj publish`
 - `cj stats`

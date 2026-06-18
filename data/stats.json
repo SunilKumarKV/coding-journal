@@ -1,15 +1,18 @@
 {
-  "totalProblems": 12,
+  "totalProblems": 13,
   "verifiedProblems": 9,
+  "problemsMissingCode": 0,
   "byPlatform": {
-    "LeetCode": 12
+    "LeetCode": 13
   },
   "byLanguage": {
-    "JavaScript": 12
+    "C": 4,
+    "Java": 4,
+    "JavaScript": 13
   },
   "byDifficulty": {
     "Mid": 1,
-    "Easy": 9
+    "Easy": 10
   },
   "byTag": {
     "Math": 2,
@@ -24,7 +27,9 @@
     "Design": 2,
     "Promise": 1,
     "Async": 1,
-    "Hash Map": 1
+    "Hash Map": 1,
+    "Two Pointers": 1,
+    "String": 1
   },
   "totalProjects": 17
 }

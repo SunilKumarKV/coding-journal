@@ -10,10 +10,10 @@ import {
   slugify
 } from "../lib/journal.js";
 import { explainProblem } from "../lib/explain-problem.js";
-import { importPlatformProblems, importSingleProblem } from "../lib/import-problems.js";
+import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
 import { publishJournalData } from "../lib/publish-journal.js";
 import { runSync } from "../lib/run-sync.js";
-import { validateProblems } from "../lib/validate-problems.js";
+import { formatValidationSummary, validateProblems } from "../lib/validate-problems.js";
 
 const program = new Command();
 
@@ -49,23 +49,48 @@ program
   });
 
 program
-  .command("import")
+  .command("pull")
   .argument("<platform>", "platform key such as leetcode or codeforces")
   .argument("<username>", "public username or handle")
   .option("--force", "overwrite existing generated files", false)
-  .description("Import solved problems from a public coding platform profile")
+  .description("Pull accepted-submission metadata from a public coding platform profile")
   .action(async (platformInput, username, options, command) => {
     const rootDir = getCommandRoot(command);
-    const result = await importPlatformProblems(platformInput, username, {
+    const result = await pullPlatformProblems(platformInput, username, {
       rootDir,
       force: options.force
     });
 
     console.log(`Fetched ${result.totalFetched} public solved problem(s).`);
-    console.log(`Created ${result.importedCount} problem folder(s).`);
+    console.log(`Created or updated ${result.importedCount} problem folder(s).`);
 
     if (result.skipped.length > 0) {
-      console.log(`Skipped existing folders: ${result.skipped.length}`);
+      console.log(`Metadata merged into existing folders: ${result.skipped.length}`);
+    }
+
+    if (result.warning) {
+      console.warn(result.warning);
+    }
+  });
+
+program
+  .command("import")
+  .argument("<platform>", "platform key such as leetcode or codeforces")
+  .argument("<username>", "public username or handle")
+  .option("--force", "overwrite existing generated files", false)
+  .description("Alias for cj pull")
+  .action(async (platformInput, username, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await pullPlatformProblems(platformInput, username, {
+      rootDir,
+      force: options.force
+    });
+
+    console.log(`Fetched ${result.totalFetched} public solved problem(s).`);
+    console.log(`Created or updated ${result.importedCount} problem folder(s).`);
+
+    if (result.skipped.length > 0) {
+      console.log(`Metadata merged into existing folders: ${result.skipped.length}`);
     }
 
     if (result.warning) {
@@ -95,6 +120,27 @@ program
   });
 
 program
+  .command("import-submission")
+  .argument("<platform>", "platform key")
+  .argument("<slug>", "problem slug")
+  .requiredOption("--language <language>", "submission language")
+  .requiredOption("--file <path>", "path to the accepted submission source file")
+  .option("--force", "overwrite an existing solution file", false)
+  .description("Attach a real accepted submission file to an existing problem")
+  .action(async (platformInput, slug, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await importSubmission(platformInput, slug, {
+      rootDir,
+      language: options.language,
+      file: options.file,
+      force: options.force
+    });
+
+    console.log(`Imported submission to ${result.destinationPath.replace(`${rootDir}/`, "")}`);
+    console.log(`Recorded ${result.submission.language} submission for ${slug}`);
+  });
+
+program
   .command("explain")
   .argument("<platform>", "platform key")
   .argument("<slug>", "problem slug")
@@ -121,7 +167,7 @@ program
   .action(async (command) => {
     const rootDir = getCommandRoot(command);
     const summary = await validateProblems({ rootDir });
-    console.log(`Validated ${summary.totalChecked} problem(s); ${summary.totalVerified} verified.`);
+    console.log(formatValidationSummary(summary));
   });
 
 program
@@ -156,6 +202,15 @@ program
     console.log(`Total problems: ${result.summary.totalProblems}`);
     console.log(`Verified problems: ${result.summary.verifiedProblems}`);
     console.log(`Unverified problems: ${result.summary.unverifiedProblems}`);
+    console.log(`Problems missing code: ${result.summary.problemsMissingCode}`);
+    console.log("Unverified problems:");
+    if (result.summary.unverifiedDetails.length === 0) {
+      console.log("- none");
+    } else {
+      for (const item of result.summary.unverifiedDetails) {
+        console.log(`- ${item.platform}/${item.slug} — ${item.reason}`);
+      }
+    }
     console.log(`Platforms: ${result.summary.platforms.join(", ")}`);
     console.log(`Languages: ${result.summary.languages.join(", ")}`);
     console.log(`Generated data files: ${result.summary.generatedFiles.join(", ")}`);
