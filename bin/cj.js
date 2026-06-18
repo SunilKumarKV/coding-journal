@@ -10,7 +10,7 @@ import {
   resolveRootDir,
   slugify
 } from "../lib/journal.js";
-import { explainProblem } from "../lib/explain-problem.js";
+import { explainProblem, explainProblemWithAI } from "../lib/explain-problem.js";
 import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
 import { publishJournalData } from "../lib/publish-journal.js";
 import { runSync } from "../lib/run-sync.js";
@@ -150,6 +150,27 @@ program
   .action(async (platformInput, slug, options, command) => {
     const rootDir = getCommandRoot(command);
     const result = await explainProblem(platformInput, slug, {
+      rootDir,
+      force: options.force
+    });
+
+    if (!result.written) {
+      console.warn(result.reason);
+      return;
+    }
+
+    console.log(`Generated ${result.explanationPath.replace(`${rootDir}/`, "")}`);
+  });
+
+program
+  .command("explain-ai")
+  .argument("<platform>", "platform key")
+  .argument("<slug>", "problem slug")
+  .option("--force", "overwrite existing explanation.md", false)
+  .description("Generate explanation.md from real problem files using Gemini")
+  .action(async (platformInput, slug, options, command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await explainProblemWithAI(platformInput, slug, {
       rootDir,
       force: options.force
     });
