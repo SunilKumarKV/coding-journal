@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-18T16:42:22.000Z",
+  "generatedAt": "2026-06-18T16:37:48.335Z",
   "repository": {
     "remoteUrl": "https://github.com/SunilKumarKV/coding-journal",
     "owner": "SunilKumarKV",
     "name": "coding-journal",
-    "branch": "main",
-    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main"
+    "branch": "feature/v1.3-ai-explanations",
+    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations"
   },
   "counts": {
     "problems": 15,

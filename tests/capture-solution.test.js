@@ -29,7 +29,15 @@ test("captureSolution creates problem files and stores real code", async () => {
       code: "export default function solve() { return null; }\n",
       acceptedAt: "2026-06-16T10:00:00.000Z"
     },
-    { rootDir }
+    {
+      rootDir,
+      syncRunner: async () => ({
+        summary: {
+          totalProblems: 1,
+          verifiedProblems: 0
+        }
+      })
+    }
   );
 
   assert.equal(result.ok, true);
@@ -69,7 +77,15 @@ test("captureSolution does not overwrite an existing real solution file", async 
       code: "export default function solve() { return [0, 1]; }\n",
       acceptedAt: "2026-06-16T10:00:00.000Z"
     },
-    { rootDir }
+    {
+      rootDir,
+      syncRunner: async () => ({
+        summary: {
+          totalProblems: 1,
+          verifiedProblems: 0
+        }
+      })
+    }
   );
 
   await assert.rejects(
@@ -85,7 +101,15 @@ test("captureSolution does not overwrite an existing real solution file", async 
         code: "export default function solve() { return []; }\n",
         acceptedAt: "2026-06-16T10:05:00.000Z"
       },
-      { rootDir }
+      {
+        rootDir,
+        syncRunner: async () => ({
+          summary: {
+            totalProblems: 1,
+            verifiedProblems: 0
+          }
+        })
+      }
     ),
     /Solution already exists/
   );

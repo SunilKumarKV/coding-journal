@@ -3,10 +3,11 @@ import assert from "node:assert/strict";
 import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { explainProblem } from "../lib/explain-problem.js";
+import { explainProblem, explainProblemWithAI } from "../lib/explain-problem.js";
 import { buildData } from "../lib/build-data.js";
 import { getLanguageFileInfo } from "../lib/journal.js";
 import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
+import { captureSolution } from "../lib/capture-solution.js";
 import {
   normalizeProblem as normalizeCodeforcesProblem,
   parseCodeforcesProblemIdentifier
@@ -357,4 +358,195 @@ test("explain command does not overwrite unless force", async () => {
   const explanation = await readFile(path.join(problemDir, "explanation.md"), "utf8");
   assert.match(explanation, /# Palindrome Number/);
   assert.match(explanation, /## Key Learning/);
+});
+
+test("explain-ai generates markdown from real problem files with a mocked Gemini response", async () => {
+  const rootDir = await createWorkspace();
+  const fetchImpl = createFetchStub({
+    question: {
+      title: "Longest Common Prefix",
+      titleSlug: "longest-common-prefix",
+      difficulty: "Easy",
+      topicTags: [{ name: "Array" }, { name: "String" }]
+    }
+  });
+
+  await importSingleProblem("leetcode", "longest-common-prefix", { rootDir, fetchImpl, force: true });
+  const problemDir = path.join(rootDir, "problems", "leetcode", "longest-common-prefix");
+  await writeFile(
+    path.join(problemDir, "solutions", "javascript.js"),
+    "export default function longestCommonPrefix(strs) { return strs[0]; }\n",
+    "utf8"
+  );
+  await writeFile(
+    path.join(problemDir, "tests.json"),
+    `${JSON.stringify({ tests: [{ input: [["flower", "flow", "flight"]], expected: "fl" }] }, null, 2)}\n`,
+    "utf8"
+  );
+
+  const result = await explainProblemWithAI("leetcode", "longest-common-prefix", {
+    rootDir,
+    force: true,
+    generateMarkdown: async (prompt) => {
+      assert.match(prompt, /problem\.json/);
+      assert.match(prompt, /solutions/);
+      assert.match(prompt, /Longest Common Prefix/);
+
+      return `# Longest Common Prefix
+
+## Problem Summary
+
+Find the shared starting substring across every string in the input array.
+
+## Approach
+
+Use the first string as the reference. Compare each character position against the same position in every other string. The first mismatch ends the prefix, so return the substring up to that index.
+
+## Time Complexity
+\`\`\`text
+O(n * m)
+\`\`\`
+
+## Space Complexity
+\`\`\`text
+O(1)
+\`\`\`
+
+## Step-By-Step Example
+
+For \`["flower", "flow", "flight"]\`, the prefix stays \`"f"\`, then \`"fl"\`, and stops before index 2 because \`"o"\` and \`"i"\` differ. The answer is \`"fl"\`.
+
+## Key Learning
+
+* Reusing the first string as a reference keeps the logic simple.
+* Early exit on the first mismatch prevents unnecessary comparisons.
+* Prefix problems often reduce to character-by-character validation.
+
+## Languages Solved
+* JavaScript`;
+    }
+  });
+
+  assert.equal(result.written, true);
+
+  const explanation = await readFile(path.join(problemDir, "explanation.md"), "utf8");
+  assert.match(explanation, /## Problem Summary/);
+  assert.match(explanation, /## Languages Solved/);
+});
+
+test("explain-ai does not overwrite a real explanation without force", async () => {
+  const rootDir = await createWorkspace();
+  const fetchImpl = createFetchStub({
+    question: {
+      title: "Valid Palindrome",
+      titleSlug: "valid-palindrome",
+      difficulty: "Easy",
+      topicTags: [{ name: "Two Pointers" }]
+    }
+  });
+
+  await importSingleProblem("leetcode", "valid-palindrome", { rootDir, fetchImpl, force: true });
+  const problemDir = path.join(rootDir, "problems", "leetcode", "valid-palindrome");
+  await writeFile(path.join(problemDir, "explanation.md"), "# Valid Palindrome\n\nReal explanation.\n", "utf8");
+
+  const result = await explainProblemWithAI("leetcode", "valid-palindrome", {
+    rootDir,
+    generateMarkdown: async () => {
+      throw new Error("should not be called");
+    }
+  });
+
+  assert.equal(result.written, false);
+  assert.equal(result.reason, "explanation.md already exists");
+});
+
+test("captureSolution auto-generates explanation for new placeholder problems when Gemini is configured", async () => {
+  const rootDir = await createWorkspace();
+  await writeFile(path.join(rootDir, ".env"), "GEMINI_API_KEY=test-key\n", "utf8");
+
+  const result = await captureSolution(
+    {
+      platform: "leetcode",
+      slug: "sample-prefix",
+      title: "Sample Prefix",
+      difficulty: "Easy",
+      url: "https://leetcode.com/problems/sample-prefix/",
+      tags: ["Array", "String"],
+      language: "JavaScript",
+      code: "export default function solve(strs) { return strs[0]; }\n",
+      acceptedAt: "2026-06-18T10:00:00.000Z"
+    },
+    {
+      rootDir,
+      syncRunner: async () => ({
+        summary: {
+          totalProblems: 1,
+          verifiedProblems: 0
+        }
+      }),
+      explainWithAI: async (platform, slug, explainOptions) => {
+        assert.equal(platform, "leetcode");
+        assert.equal(slug, "sample-prefix");
+        assert.equal(explainOptions.force, true);
+
+        const explanationPath = path.join(
+          rootDir,
+          "problems",
+          "leetcode",
+          "sample-prefix",
+          "explanation.md"
+        );
+        await writeFile(
+          explanationPath,
+          `# Sample Prefix
+
+## Problem Summary
+
+Find the common starting substring.
+
+## Approach
+
+Scan characters from the first string and stop on the first mismatch.
+
+## Time Complexity
+\`\`\`text
+O(n * m)
+\`\`\`
+
+## Space Complexity
+\`\`\`text
+O(1)
+\`\`\`
+
+## Step-By-Step Example
+
+Walk through the first string while validating the same position in every other string.
+
+## Key Learning
+
+* Prefix checks often use the first string as a baseline.
+* Early returns simplify string comparison code.
+* Multi-language solutions should still document one shared algorithm.
+
+## Languages Solved
+* JavaScript
+`,
+          "utf8"
+        );
+
+        return {
+          written: true,
+          explanationPath
+        };
+      }
+    }
+  );
+
+  assert.equal(result.explanationGenerated, true);
+  const explanation = await readFile(
+    path.join(rootDir, "problems", "leetcode", "sample-prefix", "explanation.md"),
+    "utf8"
+  );
+  assert.doesNotMatch(explanation, /Add explanation after reviewing the accepted solution/);
+  assert.match(explanation, /## Languages Solved/);
 });

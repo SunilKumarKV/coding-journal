@@ -36,7 +36,7 @@
         "path": "problems/leetcode/add-digits/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-digits/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/add-digits/explanation.md"
   },
   {
     "title": "Add Two Numbers",
@@ -76,7 +76,7 @@
         "path": "problems/leetcode/add-two-numbers/solutions/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/add-two-numbers/explanation.md"
   },
   {
     "title": "Apply Transform over Each Element in Array",
@@ -103,7 +103,7 @@
         "path": "problems/leetcode/apply-transform-over-each-element-in-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
   },
   {
     "title": "Array Reduce Transformation",
@@ -130,7 +130,7 @@
         "path": "problems/leetcode/array-reduce-transformation/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/array-reduce-transformation/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/array-reduce-transformation/explanation.md"
   },
   {
     "title": "Capture Test",
@@ -166,7 +166,7 @@
         "path": "problems/leetcode/capture-test/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/capture-test/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/capture-test/explanation.md"
   },
   {
     "title": "Counter",
@@ -192,7 +192,7 @@
         "path": "problems/leetcode/counter/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/counter/explanation.md"
   },
   {
     "title": "Counter II",
@@ -219,7 +219,7 @@
         "path": "problems/leetcode/counter-ii/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter-ii/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/counter-ii/explanation.md"
   },
   {
     "title": "Create Hello World Function",
@@ -246,7 +246,7 @@
         "path": "problems/leetcode/create-hello-world-function/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/create-hello-world-function/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/create-hello-world-function/explanation.md"
   },
   {
     "title": "Filter Elements from Array",
@@ -273,7 +273,7 @@
         "path": "problems/leetcode/filter-elements-from-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/filter-elements-from-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/filter-elements-from-array/explanation.md"
   },
   {
     "title": "14. Longest Common Prefix",
@@ -324,7 +324,7 @@
         "filename": "solutions/c.c"
       }
     ],
-    "explanation": "# 14. Longest Common Prefix\n\n## Approach\n\nAdd explanation after reviewing the accepted solution.\n",
+    "explanation": "# 14. Longest Common Prefix\n\n## Problem Summary\n\nFind the longest prefix shared by every string in the input array.\n\n## Approach\n\nAll recorded solutions use the first string as the baseline. The algorithm walks through that string one character at a time and checks whether every other string has the same character at the same index. As soon as one string is shorter or has a different character, the prefix ends immediately.\n\nThis works because a common prefix must match position by position across all strings. The earliest mismatch tells us the exact cutoff point, so there is no need to keep comparing later characters.\n\n## Time Complexity\n\n```text\nO(n * m)\n```\n\nHere, `n` is the number of strings and `m` is the length of the first string or, more generally, the shortest prefix length checked before a mismatch appears.\n\n## Space Complexity\n\n```text\nO(1)\n```\n\nThe solutions only use loop variables and return a substring from the first string.\n\n## Step-By-Step Example\n\nA conceptual walkthrough:\n\n1. Start with the first string, `\"flower\"`, as the reference.\n2. Check index `0`: every string starts with `\"f\"`, so the prefix can continue.\n3. Check index `1`: every string has `\"l\"`, so the prefix becomes `\"fl\"`.\n4. Check index `2`: `\"flower\"` has `\"o\"`, but `\"flight\"` has `\"i\"`.\n5. Stop at the first mismatch and return everything before index `2`.\n\nThe result is `\"fl\"`.\n\n## Key Learning\n\n* Using the first string as the reference keeps the logic simple and avoids extra data structures.\n* Prefix problems often become straightforward character-by-character comparison problems.\n* Returning immediately on the first mismatch is both correct and efficient.\n* When multiple languages share the same algorithm, the explanation should focus on the shared idea rather than syntax.\n\n## Languages Solved\n\n* JavaScript\n* Java\n* C\n* Python\n",
     "solutions": [
       {
         "language": "C",
@@ -351,7 +351,7 @@
         "path": "problems/leetcode/longest-common-prefix/solutions/python.py"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/longest-common-prefix/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/longest-common-prefix/explanation.md"
   },
   {
     "title": "Palindrome Number",
@@ -386,7 +386,7 @@
         "path": "problems/leetcode/palindrome-number/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/palindrome-number/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/palindrome-number/explanation.md"
   },
   {
     "title": "Sleep",
@@ -413,7 +413,7 @@
         "path": "problems/leetcode/sleep/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/sleep/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/sleep/explanation.md"
   },
   {
     "title": "To Be Or Not To Be",
@@ -440,7 +440,7 @@
         "path": "problems/leetcode/to-be-or-not-to-be/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/to-be-or-not-to-be/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/to-be-or-not-to-be/explanation.md"
   },
   {
     "title": "Two Sum",
@@ -466,7 +466,7 @@
         "path": "problems/leetcode/two-sum/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/two-sum/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/two-sum/explanation.md"
   },
   {
     "title": "Valid Palindrome",
@@ -506,6 +506,6 @@
         "path": "problems/leetcode/valid-palindrome/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/valid-palindrome/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-ai-explanations/problems/leetcode/valid-palindrome/explanation.md"
   }
 ]

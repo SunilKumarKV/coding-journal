@@ -66,6 +66,14 @@ Install dependencies:
 npm install
 ```
 
+Set up Gemini for AI explanations:
+
+```bash
+cp .env.example .env
+```
+
+Then add your `GEMINI_API_KEY` to `.env`.
+
 Run the CLI locally:
 
 ```bash
@@ -243,6 +251,28 @@ Rules:
 - uses the first test case when available
 - generates a useful skeleton even when no solution is present
 
+### `cj explain-ai <platform> <slug>`
+
+Generates `explanation.md` with Gemini from:
+
+- `problem.json`
+- `tests.json`
+- `solutions/*`
+
+Example:
+
+```bash
+node ./bin/cj.js explain-ai leetcode longest-common-prefix
+```
+
+Rules:
+
+- reads `GEMINI_API_KEY` from `.env`
+- does not generate or modify solution code
+- supports JavaScript, TypeScript, Java, C, C++, and Python solutions
+- includes all available supported-language solutions in the analysis prompt
+- does not overwrite `explanation.md` unless `--force`
+
 ### `cj verify`
 
 Runs all tests for complete problem folders and updates source verification state.
@@ -345,6 +375,7 @@ Behavior:
 - updates `problem.json.submissions`
 - creates `tests.json` only if missing
 - creates `explanation.md` only if missing
+- when a new captured problem still has the placeholder explanation and `GEMINI_API_KEY` is configured, it auto-generates a real `explanation.md`
 - does not overwrite an existing solution file
 - runs the existing sync flow after capture
 
@@ -456,6 +487,12 @@ Generate explanation:
 node ./bin/cj.js explain leetcode add-two-numbers
 ```
 
+Generate AI explanation:
+
+```bash
+node ./bin/cj.js explain-ai leetcode add-two-numbers
+```
+
 Single problem template import:
 
 ```bash
@@ -527,6 +564,7 @@ The test suite covers:
 - `cj pull`
 - `cj import-submission`
 - `cj serve` capture logic
+- `cj explain-ai` with mocked Gemini responses
 - `cj verify`
 - `cj publish`
 - `cj stats`
