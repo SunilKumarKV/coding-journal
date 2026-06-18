@@ -10,7 +10,6 @@
   "counts": {
     "problems": 15,
     "verifiedProblems": 9,
-    "problemsMissingCode": 0,
-    "projects": 17
+    "problemsMissingCode": 0
   }
 }
