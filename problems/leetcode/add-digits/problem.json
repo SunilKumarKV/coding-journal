@@ -1,0 +1,17 @@
+{
+  "title": "Add Digits",
+  "slug": "add-digits",
+  "platform": "LeetCode",
+  "difficulty": "",
+  "url": "https://leetcode.com/problems/add-digits/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "Math",
+    "Simulation",
+    "Number Theory"
+  ],
+  "timeComplexity": "0(1)",
+  "spaceComplexity": "0(1)",
+  "verified": false
+}

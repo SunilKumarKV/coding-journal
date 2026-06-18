@@ -1,15 +1,14 @@
 {
-  "generatedAt": "2026-06-17T16:42:22.603Z",
+  "generatedAt": "2026-06-18T10:42:04.107Z",
   "repository": {
-    "remoteUrl": "https://github.com/SunilKumarKV/coding-journal",
+    "remoteUrl": "https://github.com/SunilKumarKV/coding-journal.git",
     "owner": "SunilKumarKV",
     "name": "coding-journal",
     "branch": "main",
     "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main"
   },
   "counts": {
-    "problems": 11,
-    "verifiedProblems": 9,
-    "projects": 17
+    "problems": 12,
+    "verifiedProblems": 9
   }
 }

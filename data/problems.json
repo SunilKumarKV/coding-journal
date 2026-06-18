@@ -1,5 +1,44 @@
 [
   {
+    "title": "Add Digits",
+    "slug": "add-digits",
+    "platform": "LeetCode",
+    "difficulty": "",
+    "url": "https://leetcode.com/problems/add-digits/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [
+      "Math",
+      "Simulation",
+      "Number Theory"
+    ],
+    "timeComplexity": "0(1)",
+    "spaceComplexity": "0(1)",
+    "verified": false,
+    "explanation": "# Add Digits\n\n## Approach\n \nThis problem asks us to repeatedly sum the digits of a number until only one digit remains.\n \nThe straightforward way is to use a loop: while the number has more than one digit, extract each digit, sum them, and repeat with the new sum.\n \nFor each iteration:\n \n1. Initialize `sum` to 0.\n2. Extract the last digit using `num % 10`.\n3. Add it to `sum`.\n4. Remove the last digit using `num / 10`.\n5. Repeat until `num` becomes 0.\n6. Replace `num` with `sum` and repeat the whole process until `num < 10`.\n \nThe follow-up asks for an O(1) solution without loops. This uses the **digital root** formula, based on modular arithmetic: every number is congruent to the sum of its digits mod 9 (since `10 ≡ 1 mod 9`).\n \n```text\nif num == 0: return 0\nelse: return 1 + (num - 1) % 9\n```\n \nI implemented both the loop solution and the O(1) math solution in:\n \n* Python\n* JavaScript\n* C\n* Java\n \nOnly the syntax differs between the languages.\n \n## Time Complexity\n \n```text\nLoop solution: O(log num)\nO(1) solution: O(1)\n```\n \nThe loop solution's cost depends on the number of digits, which grows with `log num`. The math solution does a single computation regardless of input size.\n \n## Space Complexity\n \n```text\nO(1)\n```\n \nNo extra data structures are used; only a few variables are tracked.\n \n## Step-By-Step Example\n \nInput:\n \n```text\nnum = 38\n```\n \n### Iteration 1\n \n```text\n38 -> 3 + 8 = 11\n```\n \nResult:\n \n```text\n11\n```\n \n### Iteration 2\n \n```text\n11 -> 1 + 1 = 2\n```\n \nResult:\n \n```text\n2\n```\n \nSince `2` has only one digit, the loop stops.\n \n### Final Output\n \n```text\n2\n```\n \n### Verifying with the O(1) formula\n \n```text\n1 + (38 - 1) % 9\n= 1 + 37 % 9\n= 1 + 1\n= 2\n```\n \nMatches the loop result.\n \n## Key Learning\n \n* Repeated digit summing always converges to a single digit (the digital root).\n* The digital root has a direct mathematical shortcut using mod 9, avoiding loops entirely.\n* This connects to **casting out nines**, a real-world checksum technique once used in accounting and bookkeeping to verify arithmetic by hand before calculators existed.\n* Recognizing when a \"simulate the process\" problem hides a closed-form math trick is a useful interview skill.",
+    "solutions": [
+      {
+        "language": "C",
+        "filename": "c.c",
+        "code": "int addDigitsO1(int num) {\n    if (num == 0) return 0;\n    return 1 + (num - 1) % 9;\n}\n \nint main(void) {\n    printf(\"%d\\n\", addDigitsLoop(38)); // 2\n    printf(\"%d\\n\", addDigitsO1(38));   // 2\n    printf(\"%d\\n\", addDigitsLoop(0));  // 0\n    printf(\"%d\\n\", addDigitsO1(0));    // 0\n    return 0;\n}",
+        "path": "problems/leetcode/add-digits/solutions/c.c"
+      },
+      {
+        "language": "Java",
+        "filename": "java.java",
+        "code": "public static int addDigitsO1(int num) {\n        if (num == 0) return 0;\n        return 1 + (num - 1) % 9;\n}\n \npublic static void main(String[] args) {\n        System.out.println(addDigitsLoop(38)); // 2\n        System.out.println(addDigitsO1(38));   // 2\n        System.out.println(addDigitsLoop(0));  // 0\n        System.out.println(addDigitsO1(0));    // 0\n}",
+        "path": "problems/leetcode/add-digits/solutions/java.java"
+      },
+      {
+        "language": "JavaScript",
+        "filename": "javascript.js",
+        "code": "export default function addDigitsO1(num) {\n    if (num === 0) return 0;\n    return 1 + (num - 1) % 9;\n}\n \nconsole.log(addDigitsLoop(38)); // 2\nconsole.log(addDigitsO1(38));   // 2\nconsole.log(addDigitsLoop(0));  // 0\nconsole.log(addDigitsO1(0));    // 0\n ",
+        "path": "problems/leetcode/add-digits/solutions/javascript.js"
+      }
+    ],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-digits/explanation.md"
+  },
+  {
     "title": "Add Two Numbers",
     "slug": "add-two-numbers",
     "platform": "LeetCode",
