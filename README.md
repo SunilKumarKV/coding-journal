@@ -291,7 +291,7 @@ Run:
 node ./bin/cj.js verify
 ```
 
-### `cj publish`
+### `cj build`
 
 Publishes journal data files:
 
@@ -302,7 +302,46 @@ Publishes journal data files:
 Run:
 
 ```bash
+node ./bin/cj.js build
+```
+
+### `cj publish`
+
+Runs `cj sync` first, then safely publishes the current git branch.
+
+Run:
+
+```bash
 node ./bin/cj.js publish
+node ./bin/cj.js publish -m "feat: sync latest accepted solutions"
+```
+
+Behavior:
+
+- runs `cj sync` before any git write
+- detects the current branch automatically
+- checks `origin` before committing
+- prints `Nothing to publish` when there are no meaningful changes
+- stages changes with `git add .`
+- commits with your custom message or a safe default
+- runs `git pull --rebase origin <current-branch>`
+- runs `git push origin <current-branch>`
+
+Safety rules:
+
+- never force-pushes
+- always pushes the detected current branch, not `main` by mistake
+- if rebase conflicts happen, it stops with:
+  `Resolve conflicts, then run git rebase --continue`
+- if the only rebase conflict is `data/metadata.json`, it automatically keeps the local generated version and continues when safe
+- if `origin` is missing, it prints a clear error instead of creating a partial publish flow
+
+Example workflow:
+
+```bash
+node ./bin/cj.js serve
+node ./bin/cj.js explain-ai leetcode longest-common-prefix
+node ./bin/cj.js publish -m "feat: sync latest accepted solutions"
 ```
 
 ### `cj stats`
@@ -326,6 +365,40 @@ Runs validation and build, then prints a concise summary.
 
 ```bash
 node ./bin/cj.js sync
+```
+
+### `cj release`
+
+Runs `cj sync`, compares the refreshed journal data with the previous snapshot, writes a release summary, and prints a PR suggestion.
+
+Generated file:
+
+- `docs/releases/latest.md`
+
+Run:
+
+```bash
+node ./bin/cj.js release
+```
+
+Behavior:
+
+- runs `cj sync` first
+- detects newly added problems by comparing `data/problems.json` before and after sync
+- detects newly added languages from the refreshed problem set
+- summarizes verified problem count, platform counts, and language counts
+- includes the latest solved problems in a recent activity section
+- prints the suggested PR title:
+  `feat: sync coding journal progress`
+- prints a PR description you can paste into GitHub
+- does not push, commit, or open a PR automatically
+
+Typical flow:
+
+```bash
+node ./bin/cj.js sync
+node ./bin/cj.js release
+node ./bin/cj.js publish -m "feat: sync latest accepted solutions"
 ```
 
 ### `cj serve`
@@ -566,7 +639,9 @@ The test suite covers:
 - `cj serve` capture logic
 - `cj explain-ai` with mocked Gemini responses
 - `cj verify`
+- `cj build`
 - `cj publish`
+- `cj release`
 - `cj stats`
 
 ## GitHub Actions

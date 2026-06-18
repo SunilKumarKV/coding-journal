@@ -44,7 +44,7 @@ test("cj add creates starter files", async () => {
   assert.match(nestedSolution, /export default function solve/);
 });
 
-test("cj verify, publish, and stats work end to end", async () => {
+test("cj verify, build, and stats work end to end", async () => {
   const rootDir = await createWorkspace();
   await runCli(["add", "leetcode", "two-sum"], rootDir);
 
@@ -107,8 +107,8 @@ test("cj verify, publish, and stats work end to end", async () => {
   );
   assert.equal(updatedProblem.verified, true);
 
-  const publish = await runCli(["publish"], rootDir);
-  assert.match(publish.stdout, /Published 1 problem\(s\)\./);
+  const build = await runCli(["build"], rootDir);
+  assert.match(build.stdout, /Published 1 problem\(s\)\./);
 
   const generatedProblems = JSON.parse(await readFile(path.join(rootDir, "data", "problems.json"), "utf8"));
   const generatedStats = JSON.parse(await readFile(path.join(rootDir, "data", "stats.json"), "utf8"));
