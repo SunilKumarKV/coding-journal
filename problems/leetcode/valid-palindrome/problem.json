@@ -1,0 +1,18 @@
+{
+  "title": "Valid Palindrome",
+  "slug": "valid-palindrome",
+  "platform": "LeetCode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/valid-palindrome/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "Two Pointers",
+    "String"
+  ],
+  "timeComplexity": "",
+  "spaceComplexity": "",
+  "verified": false,
+  "solvedAt": null,
+  "source": "leetcode-question-data"
+}

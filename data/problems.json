@@ -36,7 +36,7 @@
         "path": "problems/leetcode/add-digits/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-digits/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/add-digits/explanation.md"
   },
   {
     "title": "Add Two Numbers",
@@ -76,7 +76,7 @@
         "path": "problems/leetcode/add-two-numbers/solutions/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/add-two-numbers/explanation.md"
   },
   {
     "title": "Apply Transform over Each Element in Array",
@@ -103,7 +103,7 @@
         "path": "problems/leetcode/apply-transform-over-each-element-in-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
   },
   {
     "title": "Array Reduce Transformation",
@@ -130,7 +130,7 @@
         "path": "problems/leetcode/array-reduce-transformation/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/array-reduce-transformation/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/array-reduce-transformation/explanation.md"
   },
   {
     "title": "Counter",
@@ -156,7 +156,7 @@
         "path": "problems/leetcode/counter/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/counter/explanation.md"
   },
   {
     "title": "Counter II",
@@ -183,7 +183,7 @@
         "path": "problems/leetcode/counter-ii/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter-ii/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/counter-ii/explanation.md"
   },
   {
     "title": "Create Hello World Function",
@@ -210,7 +210,7 @@
         "path": "problems/leetcode/create-hello-world-function/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/create-hello-world-function/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/create-hello-world-function/explanation.md"
   },
   {
     "title": "Filter Elements from Array",
@@ -237,7 +237,7 @@
         "path": "problems/leetcode/filter-elements-from-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/filter-elements-from-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/filter-elements-from-array/explanation.md"
   },
   {
     "title": "Palindrome Number",
@@ -272,7 +272,7 @@
         "path": "problems/leetcode/palindrome-number/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/palindrome-number/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/palindrome-number/explanation.md"
   },
   {
     "title": "Sleep",
@@ -299,7 +299,7 @@
         "path": "problems/leetcode/sleep/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/sleep/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/sleep/explanation.md"
   },
   {
     "title": "To Be Or Not To Be",
@@ -326,7 +326,7 @@
         "path": "problems/leetcode/to-be-or-not-to-be/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/to-be-or-not-to-be/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/to-be-or-not-to-be/explanation.md"
   },
   {
     "title": "Two Sum",
@@ -352,6 +352,46 @@
         "path": "problems/leetcode/two-sum/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/two-sum/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/two-sum/explanation.md"
+  },
+  {
+    "title": "Valid Palindrome",
+    "slug": "valid-palindrome",
+    "platform": "LeetCode",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/valid-palindrome/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [
+      "Two Pointers",
+      "String"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "solvedAt": null,
+    "source": "leetcode-question-data",
+    "explanation": "# Valid Palindrome\n\n## Approach\n\nDocument the solution strategy for Valid Palindrome.\n\n## Time Complexity\n\n```text\nO(?)\n```\n\n## Space Complexity\n\n```text\nO(?)\n```\n\n## Step-By-Step Example\n\nAdd an example walkthrough from tests when available.\n",
+    "solutions": [
+      {
+        "language": "C",
+        "filename": "c.c",
+        "code": "#include <stdio.h>\n\nint main(void) {\n    /* Implement solution for valid-palindrome */\n    return 0;\n}\n",
+        "path": "problems/leetcode/valid-palindrome/solutions/c.c"
+      },
+      {
+        "language": "Java",
+        "filename": "java.java",
+        "code": "public class Solution {\n    public static void main(String[] args) {\n        // Implement solution for valid-palindrome\n    }\n}\n",
+        "path": "problems/leetcode/valid-palindrome/solutions/java.java"
+      },
+      {
+        "language": "JavaScript",
+        "filename": "javascript.js",
+        "code": "export default function solve(...args) {\n  throw new Error(\"Implement solution for valid-palindrome\");\n}\n",
+        "path": "problems/leetcode/valid-palindrome/solutions/javascript.js"
+      }
+    ],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync/problems/leetcode/valid-palindrome/explanation.md"
   }
 ]

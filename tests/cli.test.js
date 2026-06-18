@@ -128,3 +128,63 @@ test("cj verify, publish, and stats work end to end", async () => {
   assert.match(stats.stdout, /Verified problems: 1/);
   assert.match(stats.stdout, /Language counts:/);
 });
+
+test("cj verify and cj sync show unverified diagnostics", async () => {
+  const rootDir = await createWorkspace();
+  await runCli(["add", "leetcode", "broken-problem"], rootDir);
+
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "broken-problem", "problem.json"),
+    `${JSON.stringify(
+      {
+        title: "Broken Problem",
+        slug: "broken-problem",
+        platform: "leetcode",
+        difficulty: "Easy",
+        url: "https://leetcode.com/problems/broken-problem/",
+        status: "Solved",
+        language: "JavaScript",
+        tags: ["Array"],
+        timeComplexity: "O(n)",
+        spaceComplexity: "O(1)",
+        verified: false
+      },
+      null,
+      2
+    )}\n`,
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "broken-problem", "solutions", "javascript.js"),
+    "export default function solve() { return 1; }\n",
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "broken-problem", "tests.json"),
+    `${JSON.stringify(
+      {
+        tests: [{ input: [], expected: 2 }]
+      },
+      null,
+      2
+    )}\n`,
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "broken-problem", "explanation.md"),
+    "# Broken Problem\n",
+    "utf8"
+  );
+
+  const verify = await runCli(["verify"], rootDir);
+  assert.match(verify.stdout, /\[unverified\]/);
+  assert.match(verify.stdout, /platform: leetcode/);
+  assert.match(verify.stdout, /slug: broken-problem/);
+  assert.match(verify.stdout, /reason: test "example 1" failed/);
+  assert.match(verify.stdout, /expected: 2/);
+  assert.match(verify.stdout, /received: 1/);
+
+  const sync = await runCli(["sync"], rootDir);
+  assert.match(sync.stdout, /Unverified problems:/);
+  assert.match(sync.stdout, /- leetcode\/broken-problem — test "example 1" failed/);
+});

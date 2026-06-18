@@ -17,6 +17,8 @@
     "cj": "./bin/cj.js"
   },
   "dependencies": {
-    "commander": "^14.0.3"
+    "@google/generative-ai": "^0.24.1",
+    "commander": "^14.0.3",
+    "dotenv": "^17.4.2"
   }
 }
