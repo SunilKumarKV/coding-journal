@@ -12,6 +12,8 @@ import {
 } from "../lib/journal.js";
 import { explainProblem, explainProblemWithAI } from "../lib/explain-problem.js";
 import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
+import { publishChanges } from "../lib/publish.js";
+import { prepareRelease } from "../lib/release.js";
 import { publishJournalData } from "../lib/publish-journal.js";
 import { runSync } from "../lib/run-sync.js";
 import { formatValidationSummary, validateProblems } from "../lib/validate-problems.js";
@@ -193,12 +195,39 @@ program
   });
 
 program
-  .command("publish")
+  .command("build")
   .description("Generate data/problems.json, data/stats.json, and data/metadata.json")
   .action(async (command) => {
     const rootDir = getCommandRoot(command);
     const result = await publishJournalData({ rootDir });
     console.log(`Published ${result.problems.length} problem(s).`);
+  });
+
+program
+  .command("publish")
+  .option("-m, --message <message>", "commit message for the publish commit")
+  .description("Run sync, then safely commit and push the current branch")
+  .action(async (options, command) => {
+    const rootDir = getCommandRoot(command);
+
+    try {
+      const result = await publishChanges({
+        rootDir,
+        message: options.message
+      });
+
+      if (!result.published) {
+        console.log(result.message);
+        return;
+      }
+
+      console.log(`Published branch ${result.branch}`);
+      console.log(`Commit message: ${result.message}`);
+      console.log(`Pushed to origin/${result.branch}`);
+    } catch (error) {
+      console.error(error instanceof Error ? error.message : "Publish failed");
+      process.exitCode = 1;
+    }
   });
 
 program
@@ -236,6 +265,19 @@ program
     console.log(`Platforms: ${result.summary.platforms.join(", ")}`);
     console.log(`Languages: ${result.summary.languages.join(", ")}`);
     console.log(`Generated data files: ${result.summary.generatedFiles.join(", ")}`);
+  });
+
+program
+  .command("release")
+  .description("Run sync, generate docs/releases/latest.md, and print a PR summary")
+  .action(async (command) => {
+    const rootDir = getCommandRoot(command);
+    const result = await prepareRelease({ rootDir });
+
+    console.log(`Generated ${result.releasePath.replace(`${rootDir}/`, "")}`);
+    console.log(`PR title: ${result.prTitle}`);
+    console.log("PR description:");
+    console.log(result.prDescription);
   });
 
 program
