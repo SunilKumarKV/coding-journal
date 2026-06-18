@@ -264,6 +264,56 @@ Runs validation and build, then prints a concise summary.
 node ./bin/cj.js sync
 ```
 
+### `cj serve`
+
+Starts the local capture server for browser-extension submissions.
+
+Server:
+
+```text
+http://localhost:4444
+```
+
+Endpoint:
+
+```text
+POST /capture
+```
+
+Usage:
+
+```bash
+node ./bin/cj.js serve
+```
+
+Sample `curl` test:
+
+```bash
+curl -X POST http://localhost:4444/capture \
+  -H "Content-Type: application/json" \
+  -d '{
+    "platform": "leetcode",
+    "slug": "add-two-numbers",
+    "title": "Add Two Numbers",
+    "difficulty": "Medium",
+    "url": "https://leetcode.com/problems/add-two-numbers/",
+    "tags": ["Linked List", "Math"],
+    "language": "JavaScript",
+    "code": "export default function solve() { return null; }",
+    "acceptedAt": "2026-06-16T10:00:00.000Z"
+  }'
+```
+
+Behavior:
+
+- creates or updates `problem.json`
+- saves the provided real code into `solutions/`
+- updates `problem.json.submissions`
+- creates `tests.json` only if missing
+- creates `explanation.md` only if missing
+- does not overwrite an existing solution file
+- runs the existing sync flow after capture
+
 ## Problem File Format
 
 Typical `problem.json`:
@@ -442,6 +492,7 @@ The test suite covers:
 - `cj add`
 - `cj pull`
 - `cj import-submission`
+- `cj serve` capture logic
 - `cj verify`
 - `cj publish`
 - `cj stats`
