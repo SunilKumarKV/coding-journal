@@ -1,0 +1,28 @@
+.cj-capture-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  padding: 12px 16px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.cj-capture-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cj-capture-toast.is-success {
+  background: #166534;
+}
+
+.cj-capture-toast.is-error {
+  background: #991b1b;
+}

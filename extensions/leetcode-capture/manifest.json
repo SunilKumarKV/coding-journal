@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "coding-journal LeetCode Capture",
+  "version": "1.0.0",
+  "description": "Capture accepted LeetCode submissions and send them to coding-journal.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://leetcode.com/problems/*",
+    "http://localhost:4444/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/problems/*"],
+      "js": ["src/content/leetcode.js"],
+      "css": ["src/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html"
+}

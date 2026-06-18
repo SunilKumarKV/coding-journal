@@ -1,0 +1,50 @@
+{
+  "title": "14. Longest Common Prefix",
+  "slug": "longest-common-prefix",
+  "platform": "leetcode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/longest-common-prefix/submissions/2037782177/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "My Lists",
+    "Array",
+    "String",
+    "Trie"
+  ],
+  "timeComplexity": "",
+  "spaceComplexity": "",
+  "verified": false,
+  "solvedAt": "2026-06-18T16:18:26.507Z",
+  "source": "browser-extension",
+  "submissions": [
+    {
+      "language": "JavaScript",
+      "submittedAt": "2026-06-18T16:12:06.021Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/javascript.js"
+    },
+    {
+      "language": "Python",
+      "submittedAt": "2026-06-18T16:14:24.547Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/python.py"
+    },
+    {
+      "language": "Java",
+      "submittedAt": "2026-06-18T16:17:33.500Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/java.java"
+    },
+    {
+      "language": "C",
+      "submittedAt": "2026-06-18T16:18:26.507Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/c.c"
+    }
+  ]
+}

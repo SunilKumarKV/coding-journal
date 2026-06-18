@@ -1,0 +1,26 @@
+{
+  "title": "Capture Test",
+  "slug": "capture-test",
+  "platform": "leetcode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/capture-test/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "Array"
+  ],
+  "timeComplexity": "",
+  "spaceComplexity": "",
+  "verified": false,
+  "solvedAt": "2026-06-16T10:00:00.000Z",
+  "source": "browser-extension",
+  "submissions": [
+    {
+      "language": "JavaScript",
+      "submittedAt": "2026-06-16T10:00:00.000Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/javascript.js"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+export default function captureTest() { return true; }

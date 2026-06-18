@@ -78,6 +78,40 @@ Or use the binary directly:
 node ./bin/cj.js --help
 ```
 
+## Browser Extension
+
+The repository includes a local Chrome extension at:
+
+```text
+extensions/leetcode-capture/
+```
+
+Purpose:
+
+- capture real accepted LeetCode submissions
+- send them to the local receiver at `http://localhost:4444/capture`
+
+Manual install steps:
+
+1. Open Chrome and go to `chrome://extensions`.
+2. Enable `Developer mode`.
+3. Click `Load unpacked`.
+4. Select `extensions/leetcode-capture`.
+
+Manual testing steps:
+
+1. Start the local receiver:
+   `node ./bin/cj.js serve`
+2. Open an accepted LeetCode submission page where the code is visible.
+3. Wait for the extension to capture it.
+4. Look for:
+   `Saved to coding-journal`
+5. Confirm the problem folder and solution file were created or updated locally.
+
+Extension-specific docs:
+
+- [extensions/leetcode-capture/README.md](/Users/sunilkumarkv/Desktop/Projects/coding-journal/extensions/leetcode-capture/README.md:1)
+
 ## CLI Commands
 
 ### `cj add <platform> <slug>`

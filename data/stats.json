@@ -1,18 +1,20 @@
 {
-  "totalProblems": 13,
+  "totalProblems": 15,
   "verifiedProblems": 9,
   "problemsMissingCode": 0,
   "byPlatform": {
-    "LeetCode": 13
+    "LeetCode": 13,
+    "leetcode": 2
   },
   "byLanguage": {
-    "C": 4,
-    "Java": 4,
-    "JavaScript": 13
+    "C": 5,
+    "Java": 5,
+    "JavaScript": 15,
+    "Python": 1
   },
   "byDifficulty": {
     "Mid": 1,
-    "Easy": 10
+    "Easy": 12
   },
   "byTag": {
     "Math": 2,
@@ -20,16 +22,18 @@
     "Number Theory": 1,
     "Linked List": 1,
     "Recursion": 1,
-    "Array": 4,
+    "Array": 6,
     "Function": 5,
     "JavaScript": 5,
     "Closure": 3,
     "Design": 2,
+    "My Lists": 1,
+    "String": 2,
+    "Trie": 1,
     "Promise": 1,
     "Async": 1,
     "Hash Map": 1,
-    "Two Pointers": 1,
-    "String": 1
+    "Two Pointers": 1
   },
   "totalProjects": 17
 }
