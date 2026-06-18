@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-18T18:03:30.879Z",
+  "generatedAt": "2026-06-18T18:04:42.725Z",
   "repository": {
-    "remoteUrl": "https://github.com/SunilKumarKV/coding-journal.git",
+    "remoteUrl": "https://github.com/SunilKumarKV/coding-journal",
     "owner": "SunilKumarKV",
     "name": "coding-journal",
-    "branch": "feature/v1.3-capture-server",
-    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-capture-server"
+    "branch": "main",
+    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main"
   },
   "counts": {
     "problems": 15,
