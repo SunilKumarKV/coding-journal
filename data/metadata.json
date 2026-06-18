@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-18T13:12:41.791Z",
+  "generatedAt": "2026-06-18T16:41:05.495Z",
   "repository": {
     "remoteUrl": "https://github.com/SunilKumarKV/coding-journal",
     "owner": "SunilKumarKV",
     "name": "coding-journal",
-    "branch": "feature/v1.3-platform-import-sync",
-    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.3-platform-import-sync"
+    "branch": "main",
+    "rawBaseUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main"
   },
   "counts": {
     "problems": 13,
