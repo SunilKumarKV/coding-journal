@@ -1,10 +1,11 @@
 {
-  "totalProblems": 15,
+  "totalProblems": 54,
   "verifiedProblems": 9,
   "problemsMissingCode": 0,
   "byPlatform": {
-    "LeetCode": 13,
-    "leetcode": 2
+    "codechef": 1,
+    "hackerrank": 38,
+    "leetcode": 15
   },
   "byLanguage": {
     "C": 5,
@@ -17,6 +18,7 @@
     "Easy": 12
   },
   "byTag": {
+    "master": 38,
     "Math": 2,
     "Simulation": 5,
     "Number Theory": 1,

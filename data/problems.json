@@ -1,8 +1,1106 @@
 [
   {
+    "title": "CodeChef Profile Stats: sunilkumarkv",
+    "slug": "profile-sunilkumarkv",
+    "platform": "codechef",
+    "difficulty": "",
+    "url": "https://www.codechef.com/users/sunilkumarkv",
+    "status": "Solved",
+    "language": null,
+    "tags": [],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkumarkv",
+    "solvedCount": 115,
+    "badges": [
+      {
+        "title": "Problem Solver - Bronze Badge",
+        "value": "50"
+      },
+      {
+        "title": "Daily Streak - Bronze Badge",
+        "value": "5"
+      }
+    ],
+    "recordType": "profile-stats",
+    "solvedAt": null,
+    "source": "html-summary-only",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/codechef/profile-sunilkumarkv/problem.json"
+  },
+  {
+    "title": "Day 1: Data Types",
+    "slug": "30-data-types",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/30-data-types",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-28T18:06:12.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/30-data-types/problem.json"
+  },
+  {
+    "title": "Day 0: Hello, World.",
+    "slug": "30-hello-world",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/30-hello-world",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-05T16:35:16.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/30-hello-world/problem.json"
+  },
+  {
+    "title": "A Very Big Sum",
+    "slug": "a-very-big-sum",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/a-very-big-sum",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-28T17:52:17.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/a-very-big-sum/problem.json"
+  },
+  {
+    "title": "CamelCase",
+    "slug": "camelcase",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/camelcase",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-27T15:05:01.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/camelcase/problem.json"
+  },
+  {
+    "title": "Diagonal Difference",
+    "slug": "diagonal-difference",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/diagonal-difference",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-28T17:55:01.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/diagonal-difference/problem.json"
+  },
+  {
+    "title": "Item List Manager",
+    "slug": "item-list-manager",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/item-list-manager",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2024-12-20T17:59:36.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/item-list-manager/problem.json"
+  },
+  {
+    "title": "Day 1: Arithmetic Operators",
+    "slug": "js10-arithmetic-operators",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-arithmetic-operators",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-12T16:45:29.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-arithmetic-operators/problem.json"
+  },
+  {
+    "title": "Day 3: Arrays",
+    "slug": "js10-arrays",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-arrays",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-17T17:08:08.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-arrays/problem.json"
+  },
+  {
+    "title": "Day 5: Arrow Functions",
+    "slug": "js10-arrows",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-arrows",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-09-04T16:37:09.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-arrows/problem.json"
+  },
+  {
+    "title": "Day 9: Binary Calculator",
+    "slug": "js10-binary-calculator",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-binary-calculator",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-05T16:05:38.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-binary-calculator/problem.json"
+  },
+  {
+    "title": "Day 6: Bitwise Operators",
+    "slug": "js10-bitwise",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-bitwise",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-10-25T14:27:45.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-bitwise/problem.json"
+  },
+  {
+    "title": "Day 8: Buttons Container",
+    "slug": "js10-buttons-container",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-buttons-container",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-02T16:34:28.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-buttons-container/problem.json"
+  },
+  {
+    "title": "Day 4: Classes",
+    "slug": "js10-class",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-class",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-02T14:02:18.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-class/problem.json"
+  },
+  {
+    "title": "Day 4: Count Objects",
+    "slug": "js10-count-objects",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-count-objects",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-02T13:55:53.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-count-objects/problem.json"
+  },
+  {
+    "title": "Day 8: Create a Button",
+    "slug": "js10-create-a-button",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-create-a-button",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-02T16:11:17.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-create-a-button/problem.json"
+  },
+  {
+    "title": "Day 0: Data Types",
+    "slug": "js10-data-types",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-data-types",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-12T16:36:59.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-data-types/problem.json"
+  },
+  {
+    "title": "Day 6: JavaScript Dates",
+    "slug": "js10-date",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-date",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-02T16:40:18.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-date/problem.json"
+  },
+  {
+    "title": "Day 1: Functions",
+    "slug": "js10-function",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-function",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-12T16:55:34.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-function/problem.json"
+  },
+  {
+    "title": "Day 0: Hello, World!",
+    "slug": "js10-hello-world",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-hello-world",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-12T16:17:33.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-hello-world/problem.json"
+  },
+  {
+    "title": "Day 2: Conditional Statements: If-Else",
+    "slug": "js10-if-else",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-if-else",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-15T03:47:09.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-if-else/problem.json"
+  },
+  {
+    "title": "Day 5: Inheritance",
+    "slug": "js10-inheritance",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-inheritance",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-02T14:03:04.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-inheritance/problem.json"
+  },
+  {
+    "title": "Day 1: Let and Const",
+    "slug": "js10-let-and-const",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-let-and-const",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-14T16:41:41.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-let-and-const/problem.json"
+  },
+  {
+    "title": "Day 2: Loops",
+    "slug": "js10-loops",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-loops",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-12T16:51:54.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-loops/problem.json"
+  },
+  {
+    "title": "Day 4: Create a Rectangle Object",
+    "slug": "js10-objects",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-objects",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-01T14:08:35.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-objects/problem.json"
+  },
+  {
+    "title": "Day 7: Regular Expressions I",
+    "slug": "js10-regexp-1",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-regexp-1",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-02T14:00:05.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-regexp-1/problem.json"
+  },
+  {
+    "title": "Day 7: Regular Expressions II",
+    "slug": "js10-regexp-2",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-regexp-2",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-02T15:54:52.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-regexp-2/problem.json"
+  },
+  {
+    "title": "Day 7: Regular Expressions III",
+    "slug": "js10-regexp-3",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-regexp-3",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-11-02T15:57:50.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-regexp-3/problem.json"
+  },
+  {
+    "title": "Day 2: Conditional Statements: Switch",
+    "slug": "js10-switch",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-switch",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-16T15:22:51.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-switch/problem.json"
+  },
+  {
+    "title": "Day 5: Template Literals",
+    "slug": "js10-template-literals",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-template-literals",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-08-02T14:06:35.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-template-literals/problem.json"
+  },
+  {
+    "title": "Day 3: Throw",
+    "slug": "js10-throw",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-throw",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-22T15:36:18.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-throw/problem.json"
+  },
+  {
+    "title": "Day 3: Try, Catch, and Finally",
+    "slug": "js10-try-catch-and-finally",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/js10-try-catch-and-finally",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-07-22T15:33:48.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/js10-try-catch-and-finally/problem.json"
+  },
+  {
+    "title": "Contact Form",
+    "slug": "react-contact-form",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/react-contact-form",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2024-12-22T19:30:34.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/react-contact-form/problem.json"
+  },
+  {
+    "title": "Slideshow",
+    "slug": "react-slideshow-1",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/react-slideshow-1",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2024-12-23T16:55:40.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/react-slideshow-1/problem.json"
+  },
+  {
+    "title": "Simple Array Sum",
+    "slug": "simple-array-sum",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/simple-array-sum",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-27T14:59:06.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/simple-array-sum/problem.json"
+  },
+  {
+    "title": "Solve Me First",
+    "slug": "solve-me-first",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/solve-me-first",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-27T14:46:22.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/solve-me-first/problem.json"
+  },
+  {
+    "title": "Strong Password",
+    "slug": "strong-password",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/strong-password",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2025-01-27T15:09:28.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/strong-password/problem.json"
+  },
+  {
+    "title": "Breaking the Records",
+    "slug": "three-month-preparation-kit-breaking-best-and-worst-records",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/three-month-preparation-kit-breaking-best-and-worst-records",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-05-01T02:30:08.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/three-month-preparation-kit-breaking-best-and-worst-records/problem.json"
+  },
+  {
+    "title": "Camel Case 4",
+    "slug": "three-month-preparation-kit-camel-case",
+    "platform": "hackerrank",
+    "difficulty": "",
+    "url": "https://www.hackerrank.com/challenges/three-month-preparation-kit-camel-case",
+    "status": "Solved",
+    "language": null,
+    "tags": [
+      "master"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "username": "sunilkvb44",
+    "solvedCount": null,
+    "badges": [],
+    "skills": [],
+    "recordType": "problem",
+    "solvedAt": "2023-05-01T02:33:08.000+00:00",
+    "source": "hackerrank-public-api",
+    "submissions": [],
+    "explanation": "",
+    "hasCode": false,
+    "solutionCount": 0,
+    "solutions": [],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/hackerrank/three-month-preparation-kit-camel-case/problem.json"
+  },
+  {
     "title": "Add Digits",
     "slug": "add-digits",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "",
     "url": "https://leetcode.com/problems/add-digits/",
     "status": "Solved",
@@ -16,6 +1114,8 @@
     "spaceComplexity": "0(1)",
     "verified": false,
     "explanation": "# Add Digits\n\n## Approach\n \nThis problem asks us to repeatedly sum the digits of a number until only one digit remains.\n \nThe straightforward way is to use a loop: while the number has more than one digit, extract each digit, sum them, and repeat with the new sum.\n \nFor each iteration:\n \n1. Initialize `sum` to 0.\n2. Extract the last digit using `num % 10`.\n3. Add it to `sum`.\n4. Remove the last digit using `num / 10`.\n5. Repeat until `num` becomes 0.\n6. Replace `num` with `sum` and repeat the whole process until `num < 10`.\n \nThe follow-up asks for an O(1) solution without loops. This uses the **digital root** formula, based on modular arithmetic: every number is congruent to the sum of its digits mod 9 (since `10 ≡ 1 mod 9`).\n \n```text\nif num == 0: return 0\nelse: return 1 + (num - 1) % 9\n```\n \nI implemented both the loop solution and the O(1) math solution in:\n \n* Python\n* JavaScript\n* C\n* Java\n \nOnly the syntax differs between the languages.\n \n## Time Complexity\n \n```text\nLoop solution: O(log num)\nO(1) solution: O(1)\n```\n \nThe loop solution's cost depends on the number of digits, which grows with `log num`. The math solution does a single computation regardless of input size.\n \n## Space Complexity\n \n```text\nO(1)\n```\n \nNo extra data structures are used; only a few variables are tracked.\n \n## Step-By-Step Example\n \nInput:\n \n```text\nnum = 38\n```\n \n### Iteration 1\n \n```text\n38 -> 3 + 8 = 11\n```\n \nResult:\n \n```text\n11\n```\n \n### Iteration 2\n \n```text\n11 -> 1 + 1 = 2\n```\n \nResult:\n \n```text\n2\n```\n \nSince `2` has only one digit, the loop stops.\n \n### Final Output\n \n```text\n2\n```\n \n### Verifying with the O(1) formula\n \n```text\n1 + (38 - 1) % 9\n= 1 + 37 % 9\n= 1 + 1\n= 2\n```\n \nMatches the loop result.\n \n## Key Learning\n \n* Repeated digit summing always converges to a single digit (the digital root).\n* The digital root has a direct mathematical shortcut using mod 9, avoiding loops entirely.\n* This connects to **casting out nines**, a real-world checksum technique once used in accounting and bookkeeping to verify arithmetic by hand before calculators existed.\n* Recognizing when a \"simulate the process\" problem hides a closed-form math trick is a useful interview skill.",
+    "hasCode": true,
+    "solutionCount": 3,
     "solutions": [
       {
         "language": "C",
@@ -36,12 +1136,12 @@
         "path": "problems/leetcode/add-digits/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-digits/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/add-digits/explanation.md"
   },
   {
     "title": "Add Two Numbers",
     "slug": "add-two-numbers",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Mid",
     "url": "https://leetcode.com/problems/add-two-numbers/",
     "status": "Solved",
@@ -56,6 +1156,8 @@
     "spaceComplexity": "O(1)",
     "verified": false,
     "explanation": "# Add Two Numbers\n\n## Approach\n\nThis problem represents two non-negative integers using linked lists, where each node contains a single digit and the digits are stored in reverse order.\n\nTo solve it, I traverse both linked lists simultaneously while maintaining a `carry` value.\n\nFor each iteration:\n\n1. Read the current value from both linked lists (if available).\n2. Add both values along with the carry.\n3. Create a new node containing `sum % 10`.\n4. Update the carry using `sum / 10`.\n5. Move to the next nodes.\n\nA dummy node is used to simplify the construction of the result linked list.\n\nI implemented the same algorithm in:\n\n* JavaScript\n* C\n* Java\n\nOnly the syntax differs between the languages.\n\n## Time Complexity\n\n```text\nO(max(m, n))\n```\n\nWhere:\n\n* `m` = length of the first linked list\n* `n` = length of the second linked list\n\nThe algorithm traverses each list only once.\n\n## Space Complexity\n\n```text\nO(max(m, n))\n```\n\nA new linked list is created to store the result.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nl1 = [2,4,3]\nl2 = [5,6,4]\n```\n\nThese linked lists represent:\n\n```text\n342 + 465\n```\n\n### Iteration 1\n\n```text\n2 + 5 + carry(0) = 7\n```\n\nNode value:\n\n```text\n7\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7\n```\n\n### Iteration 2\n\n```text\n4 + 6 + carry(0) = 10\n```\n\nNode value:\n\n```text\n0\n```\n\nCarry:\n\n```text\n1\n```\n\nResult:\n\n```text\n7 -> 0\n```\n\n### Iteration 3\n\n```text\n3 + 4 + carry(1) = 8\n```\n\nNode value:\n\n```text\n8\n```\n\nCarry:\n\n```text\n0\n```\n\nResult:\n\n```text\n7 -> 0 -> 8\n```\n\n### Final Output\n\n```text\n[7,0,8]\n```\n\nThis represents:\n\n```text\n807\n```\n\nBecause:\n\n```text\n342 + 465 = 807\n```\n\n## Key Learning\n\n* Using a dummy node simplifies linked list construction.\n* Carry handling follows the same logic as manual addition.\n* This pattern is commonly used in linked list arithmetic problems.\n* Traversing multiple linked lists simultaneously is an important interview technique.\n",
+    "hasCode": true,
+    "solutionCount": 3,
     "solutions": [
       {
         "language": "C",
@@ -76,12 +1178,12 @@
         "path": "problems/leetcode/add-two-numbers/solutions/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/add-two-numbers/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/add-two-numbers/explanation.md"
   },
   {
     "title": "Apply Transform over Each Element in Array",
     "slug": "apply-transform-over-each-element-in-array",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/apply-transform-over-each-element-in-array/",
     "status": "Solved",
@@ -95,6 +1197,8 @@
     "spaceComplexity": "O(n)",
     "verified": true,
     "explanation": "# Apply Transform over Each Element in Array\n\n## Approach\n\nWe create a new array and simulate `Array.prototype.map` manually.\n\nFor every index:\n\n```text\nresult[i] = fn(arr[i], i)\n```\n\nAfter processing all elements, return the transformed array.\n\n## Time Complexity\n\n`O(n)`\n\nWe apply the transform function once per element.\n\n## Space Complexity\n\n`O(n)`\n\nA new output array is created.\n\n## Step-By-Step Example\n\nInput:\n\n```text\narr = [1, 2, 3]\nfn(value, index) = value + index\n```\n\n1. Index `0`: `1 + 0 = 1`\n2. Index `1`: `2 + 1 = 3`\n3. Index `2`: `3 + 2 = 5`\n4. Return `[1, 3, 5]`\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -103,12 +1207,12 @@
         "path": "problems/leetcode/apply-transform-over-each-element-in-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/apply-transform-over-each-element-in-array/explanation.md"
   },
   {
     "title": "Array Reduce Transformation",
     "slug": "array-reduce-transformation",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/array-reduce-transformation/",
     "status": "Solved",
@@ -122,6 +1226,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# Array Reduce Transformation\n\n## Approach\n\nWe simulate how `Array.prototype.reduce` works without using the built-in method.\n\nStart with the initial value `init`, then iterate through each number in `nums` and update the accumulator with:\n\n```text\naccumulator = fn(accumulator, currentValue)\n```\n\nAfter the loop finishes, return the accumulator.\n\n## Time Complexity\n\n`O(n)`\n\nWe process each element exactly once.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the accumulator variable is maintained.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nnums = [1, 2, 3, 4]\ninit = 0\nfn = sum\n```\n\n1. Start with `result = 0`.\n2. Process `1`: `result = 0 + 1 = 1`.\n3. Process `2`: `result = 1 + 2 = 3`.\n4. Process `3`: `result = 3 + 3 = 6`.\n5. Process `4`: `result = 6 + 4 = 10`.\n6. Return `10`.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -130,7 +1236,7 @@
         "path": "problems/leetcode/array-reduce-transformation/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/array-reduce-transformation/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/array-reduce-transformation/explanation.md"
   },
   {
     "title": "Capture Test",
@@ -158,6 +1264,8 @@
       }
     ],
     "explanation": "# Capture Test\n\n## Approach\n\nAdd explanation after reviewing the accepted solution.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -166,12 +1274,12 @@
         "path": "problems/leetcode/capture-test/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/capture-test/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/capture-test/explanation.md"
   },
   {
     "title": "Counter",
     "slug": "counter",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/counter/",
     "status": "Solved",
@@ -184,6 +1292,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# Counter\n\n## Approach\n\nThis is a classic closure problem.\n\nWe store `n` in a variable and return an inner function. Every time the inner function is called:\n\n1. return the current value\n2. increment it for the next call\n\nUsing `current++` gives exactly that post-increment behavior.\n\n## Time Complexity\n\n`O(1)` per call\n\nEach invocation performs one return and one increment.\n\n## Space Complexity\n\n`O(1)`\n\nOnly one captured integer is stored.\n\n## Step-By-Step Example\n\nIf `n = 10`:\n\n1. First call returns `10`\n2. Second call returns `11`\n3. Third call returns `12`\n\nSo the sequence is `[10, 11, 12]`.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -192,12 +1302,12 @@
         "path": "problems/leetcode/counter/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/counter/explanation.md"
   },
   {
     "title": "Counter II",
     "slug": "counter-ii",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/counter-ii/",
     "status": "Solved",
@@ -211,6 +1321,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# Counter II\n\n## Approach\n\nThis problem is a closure design problem. We keep the current counter value inside the outer function and return methods that can read and update that value.\n\n- `increment()` adds `1`\n- `decrement()` subtracts `1`\n- `reset()` restores the original `init`\n\nBecause all three methods close over the same `current` variable, they share state correctly.\n\n## Time Complexity\n\n`O(1)` per method call\n\nEach operation updates or returns a number in constant time.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the stored counter state is used.\n\n## Step-By-Step Example\n\nIf `init = 5`:\n\n1. `current = 5`\n2. `increment()` makes it `6`\n3. `reset()` brings it back to `5`\n4. `decrement()` makes it `4`\n\nThe returned values are `[6, 5, 4]`.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -219,12 +1331,12 @@
         "path": "problems/leetcode/counter-ii/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/counter-ii/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/counter-ii/explanation.md"
   },
   {
     "title": "Create Hello World Function",
     "slug": "create-hello-world-function",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/create-hello-world-function/",
     "status": "Solved",
@@ -238,6 +1350,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# Create Hello World Function\n\n## Approach\n\nReturn a new function that ignores every argument and always returns the same string:\n\n```text\n\"Hello World\"\n```\n\nThis works because the returned function simply returns a constant value.\n\n## Time Complexity\n\n`O(1)` per call\n\nThe function always returns the same string immediately.\n\n## Space Complexity\n\n`O(1)`\n\nNo extra data structure is needed.\n\n## Step-By-Step Example\n\n1. Call `createHelloWorld()`\n2. It returns a function\n3. Call that returned function with any arguments\n4. It still returns `\"Hello World\"`\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -246,12 +1360,12 @@
         "path": "problems/leetcode/create-hello-world-function/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/create-hello-world-function/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/create-hello-world-function/explanation.md"
   },
   {
     "title": "Filter Elements from Array",
     "slug": "filter-elements-from-array",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/filter-elements-from-array/",
     "status": "Solved",
@@ -265,6 +1379,8 @@
     "spaceComplexity": "O(n)",
     "verified": true,
     "explanation": "# Filter Elements from Array\n\n## Approach\n\nWe build a new result array and manually simulate `Array.prototype.filter`.\n\nFor each element:\n\n1. Call the filtering function with the current value and index.\n2. If the result is truthy, push the value into the output array.\n\nThis matches the behavior required by the problem without using the built-in `filter`.\n\n## Time Complexity\n\n`O(n)`\n\nEach array element is visited once.\n\n## Space Complexity\n\n`O(n)`\n\nIn the worst case, every element is included in the output.\n\n## Step-By-Step Example\n\nInput:\n\n```text\narr = [0, 10, 20, 30]\nfn(value) = value > 10\n```\n\n1. `0 > 10` is false, skip it.\n2. `10 > 10` is false, skip it.\n3. `20 > 10` is true, add `20`.\n4. `30 > 10` is true, add `30`.\n5. Return `[20, 30]`.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -273,7 +1389,7 @@
         "path": "problems/leetcode/filter-elements-from-array/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/filter-elements-from-array/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/filter-elements-from-array/explanation.md"
   },
   {
     "title": "14. Longest Common Prefix",
@@ -325,6 +1441,8 @@
       }
     ],
     "explanation": "# 14. Longest Common Prefix\n\n## Problem Summary\n\nFind the longest prefix shared by every string in the input array.\n\n## Approach\n\nAll recorded solutions use the first string as the baseline. The algorithm walks through that string one character at a time and checks whether every other string has the same character at the same index. As soon as one string is shorter or has a different character, the prefix ends immediately.\n\nThis works because a common prefix must match position by position across all strings. The earliest mismatch tells us the exact cutoff point, so there is no need to keep comparing later characters.\n\n## Time Complexity\n\n```text\nO(n * m)\n```\n\nHere, `n` is the number of strings and `m` is the length of the first string or, more generally, the shortest prefix length checked before a mismatch appears.\n\n## Space Complexity\n\n```text\nO(1)\n```\n\nThe solutions only use loop variables and return a substring from the first string.\n\n## Step-By-Step Example\n\nA conceptual walkthrough:\n\n1. Start with the first string, `\"flower\"`, as the reference.\n2. Check index `0`: every string starts with `\"f\"`, so the prefix can continue.\n3. Check index `1`: every string has `\"l\"`, so the prefix becomes `\"fl\"`.\n4. Check index `2`: `\"flower\"` has `\"o\"`, but `\"flight\"` has `\"i\"`.\n5. Stop at the first mismatch and return everything before index `2`.\n\nThe result is `\"fl\"`.\n\n## Key Learning\n\n* Using the first string as the reference keeps the logic simple and avoids extra data structures.\n* Prefix problems often become straightforward character-by-character comparison problems.\n* Returning immediately on the first mismatch is both correct and efficient.\n* When multiple languages share the same algorithm, the explanation should focus on the shared idea rather than syntax.\n\n## Languages Solved\n\n* JavaScript\n* Java\n* C\n* Python\n",
+    "hasCode": true,
+    "solutionCount": 4,
     "solutions": [
       {
         "language": "C",
@@ -351,12 +1469,12 @@
         "path": "problems/leetcode/longest-common-prefix/solutions/python.py"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/longest-common-prefix/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/longest-common-prefix/explanation.md"
   },
   {
     "title": "Palindrome Number",
     "slug": "palindrome-number",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "",
     "url": "https://leetcode.com/problems/palindrome-number/",
     "status": "Solved",
@@ -366,6 +1484,8 @@
     "spaceComplexity": "",
     "verified": false,
     "explanation": "# Palindrome Number\n\n## Approach\n \nThis problem asks us to check whether an integer reads the same forwards and backwards, without converting it to a string.\n \nThe idea is to reverse the number digit by digit and compare it with the original.\n \nFor each iteration:\n \n1. If `x` is negative, return `false` immediately, since negative numbers can never be palindromes (the `-` sign breaks symmetry).\n2. Store the original value of `x` in `palindrome` for comparison later.\n3. Extract the last digit using `x % 10` and store it in `remainder`.\n4. Build the reversed number: `reverse = reverse * 10 + remainder`.\n5. Remove the last digit from `x` using `x / 10`.\n6. Repeat until `x` becomes 0.\n7. Compare `palindrome` with `reverse`. If they match, it's a palindrome.\nA `long long` is used for `reverse` to safely hold the reversed value even if intermediate overflow would occur for numbers near the `int` boundary (this is a common safe practice, though it doesn't actually rescue overflow for the true edge case the same way the O(1)/half-reversal approach does).\n \nI implemented the same algorithm in:\n \n* C\n* Python\n* JavaScript\n* Java\nOnly the syntax differs between the languages.\n \n## Time Complexity\n \n```text\nO(log10(x))\n```\n \nThe number of iterations equals the number of digits in `x`, which is proportional to `log10(x)`.\n \n## Space Complexity\n \n```text\nO(1)\n```\n \nOnly a few integer variables are used; no extra data structures are needed.\n \n## Step-By-Step Example\n \nInput:\n \n```text\nx = 121\n```\n \n`palindrome = 121`, `reverse = 0`\n \n### Iteration 1\n \n```text\nremainder = 121 % 10 = 1\nreverse = 0 * 10 + 1 = 1\nx = 121 / 10 = 12\n```\n \n### Iteration 2\n \n```text\nremainder = 12 % 10 = 2\nreverse = 1 * 10 + 2 = 12\nx = 12 / 10 = 1\n```\n \n### Iteration 3\n \n```text\nremainder = 1 % 10 = 1\nreverse = 12 * 10 + 1 = 121\nx = 1 / 10 = 0\n```\n \n`x` is now 0, so the loop stops.\n \n### Final Comparison\n \n```text\npalindrome = 121\nreverse = 121\n121 == 121 -> true\n```\n \n### Final Output\n \n```text\ntrue\n```\n \n### Negative Number Example\n \nInput:\n \n```text\nx = -121\n```\n \nSince `x < 0`, the function returns `false` immediately without entering the loop.\n \n## Key Learning\n \n* Negative numbers are never palindromes because of the leading minus sign.\n* Reversing digits using `% 10` and `/ 10` is a fundamental technique for digit manipulation problems.\n* Comparing the reversed number to the original avoids string conversion entirely.\n* A common follow-up optimization is to reverse only half the digits and compare the two halves, which avoids any risk of overflow and slightly reduces work.",
+    "hasCode": true,
+    "solutionCount": 3,
     "solutions": [
       {
         "language": "C",
@@ -386,12 +1506,12 @@
         "path": "problems/leetcode/palindrome-number/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/palindrome-number/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/palindrome-number/explanation.md"
   },
   {
     "title": "Sleep",
     "slug": "sleep",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/sleep/",
     "status": "Solved",
@@ -405,6 +1525,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# Sleep\n\n## Approach\n\nThe problem asks us to create an async sleep helper using JavaScript promises. The clean way to do this is to wrap `setTimeout` inside a `Promise` and resolve it after `millis` milliseconds.\n\n```js\nnew Promise((resolve) => setTimeout(resolve, millis));\n```\n\nWhen used with `await`, execution pauses until the promise resolves.\n\n## Time Complexity\n\n`O(1)`\n\nWe create one promise and one timer.\n\n## Space Complexity\n\n`O(1)`\n\nOnly constant extra space is used.\n\n## Step-By-Step Example\n\nIf `millis = 100`:\n\n1. Call `sleep(100)`.\n2. Create a promise.\n3. Register a `setTimeout` callback for 100 milliseconds later.\n4. Return the promise immediately.\n5. After 100 milliseconds, `resolve()` is called.\n6. Any `await sleep(100)` continues execution.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -413,12 +1535,12 @@
         "path": "problems/leetcode/sleep/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/sleep/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/sleep/explanation.md"
   },
   {
     "title": "To Be Or Not To Be",
     "slug": "to-be-or-not-to-be",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/to-be-or-not-to-be/",
     "status": "Solved",
@@ -432,6 +1554,8 @@
     "spaceComplexity": "O(1)",
     "verified": true,
     "explanation": "# To Be Or Not To Be\n\n## Approach\n\nWe return an object with two methods:\n\n- `toBe`\n- `notToBe`\n\nBoth methods compare against the original value captured by the outer function.\n\n- `toBe` returns `true` when values are strictly equal, otherwise throws `\"Not Equal\"`\n- `notToBe` returns `true` when values are different, otherwise throws `\"Equal\"`\n\nThis matches the expected tiny assertion helper behavior.\n\n## Time Complexity\n\n`O(1)`\n\nEach method performs a single strict comparison.\n\n## Space Complexity\n\n`O(1)`\n\nOnly the captured value and two methods are stored.\n\n## Step-By-Step Example\n\nIf `val = 5`:\n\n1. Call `expect(5)`\n2. `toBe(5)` checks `5 === 5`, so it returns `true`\n3. `notToBe(5)` checks `5 !== 5`, which is false, so it throws `\"Equal\"`\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -440,12 +1564,12 @@
         "path": "problems/leetcode/to-be-or-not-to-be/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/to-be-or-not-to-be/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/to-be-or-not-to-be/explanation.md"
   },
   {
     "title": "Two Sum",
     "slug": "two-sum",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/two-sum/",
     "status": "Solved",
@@ -458,6 +1582,8 @@
     "spaceComplexity": "O(n)",
     "verified": true,
     "explanation": "# Two Sum\n\n## Hash Map Approach\n\nWe scan the array once and store each visited number in a hash map where:\n\n- the key is the number\n- the value is its index\n\nFor each number, we compute its complement:\n\n```text\ncomplement = target - currentNumber\n```\n\nIf that complement is already in the map, we have found the two indices that add up to the target. If not, we store the current number and keep going.\n\n## Time Complexity\n\n`O(n)`\n\nWe only iterate through the array once, and each hash map lookup or insert is `O(1)` on average.\n\n## Space Complexity\n\n`O(n)`\n\nIn the worst case, we may store almost every number in the hash map.\n\n## Step-By-Step Example\n\nInput:\n\n```text\nnums = [2, 7, 11, 15]\ntarget = 9\n```\n\n1. Start with an empty map.\n2. Look at `2`.\n   `complement = 9 - 2 = 7`\n   `7` is not in the map, so store `2 -> 0`.\n3. Look at `7`.\n   `complement = 9 - 7 = 2`\n   `2` is already in the map at index `0`.\n4. Return `[0, 1]`.\n\nThis gives the indices of the two numbers whose sum is `9`.\n",
+    "hasCode": true,
+    "solutionCount": 1,
     "solutions": [
       {
         "language": "JavaScript",
@@ -466,12 +1592,12 @@
         "path": "problems/leetcode/two-sum/solution.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/two-sum/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/two-sum/explanation.md"
   },
   {
     "title": "Valid Palindrome",
     "slug": "valid-palindrome",
-    "platform": "LeetCode",
+    "platform": "leetcode",
     "difficulty": "Easy",
     "url": "https://leetcode.com/problems/valid-palindrome/",
     "status": "Solved",
@@ -486,6 +1612,8 @@
     "solvedAt": null,
     "source": "leetcode-question-data",
     "explanation": "# Valid Palindrome\n\n## Approach\n\nDocument the solution strategy for Valid Palindrome.\n\n## Time Complexity\n\n```text\nO(?)\n```\n\n## Space Complexity\n\n```text\nO(?)\n```\n\n## Step-By-Step Example\n\nAdd an example walkthrough from tests when available.\n",
+    "hasCode": true,
+    "solutionCount": 3,
     "solutions": [
       {
         "language": "C",
@@ -506,6 +1634,6 @@
         "path": "problems/leetcode/valid-palindrome/solutions/javascript.js"
       }
     ],
-    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/valid-palindrome/explanation.md"
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/feature/v1.6-hackerrank-import/problems/leetcode/valid-palindrome/explanation.md"
   }
 ]
