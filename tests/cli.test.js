@@ -34,7 +34,7 @@ test("cj add creates starter files", async () => {
   );
 
   assert.equal(problemJson.slug, "sample-problem");
-  assert.equal(problemJson.platform, "LeetCode");
+  assert.equal(problemJson.platform, "leetcode");
   assert.equal(problemJson.verified, false);
 
   const nestedSolution = await readFile(
@@ -106,6 +106,7 @@ test("cj verify, build, and stats work end to end", async () => {
     await readFile(path.join(rootDir, "problems", "leetcode", "two-sum", "problem.json"), "utf8")
   );
   assert.equal(updatedProblem.verified, true);
+  assert.equal(updatedProblem.platform, "leetcode");
 
   const build = await runCli(["build"], rootDir);
   assert.match(build.stdout, /Published 1 problem\(s\)\./);
@@ -122,6 +123,7 @@ test("cj verify, build, and stats work end to end", async () => {
   assert.equal(generatedStats.totalProblems, 1);
   assert.equal(generatedStats.verifiedProblems, 1);
   assert.equal(generatedStats.byLanguage.JavaScript, 1);
+  assert.equal(generatedStats.byPlatform.leetcode, 1);
 
   const stats = await runCli(["stats"], rootDir);
   assert.match(stats.stdout, /Total problems: 1/);
@@ -187,4 +189,130 @@ test("cj verify and cj sync show unverified diagnostics", async () => {
   const sync = await runCli(["sync"], rootDir);
   assert.match(sync.stdout, /Unverified problems:/);
   assert.match(sync.stdout, /- leetcode\/broken-problem — test "example 1" failed/);
+});
+
+test("cj sync normalizes stored platform casing and includes metadata-only platform records", async () => {
+  const rootDir = await createWorkspace();
+
+  await mkdir(path.join(rootDir, "problems", "codechef", "profile-sunilkumarkv"), { recursive: true });
+  await writeFile(
+    path.join(rootDir, "problems", "codechef", "profile-sunilkumarkv", "problem.json"),
+    `${JSON.stringify(
+      {
+        title: "CodeChef Profile Stats: sunilkumarkv",
+        slug: "profile-sunilkumarkv",
+        platform: "CodeChef",
+        difficulty: "",
+        url: "https://www.codechef.com/users/sunilkumarkv",
+        status: "Solved",
+        language: null,
+        tags: [],
+        timeComplexity: "",
+        spaceComplexity: "",
+        solvedCount: 115,
+        recordType: "profile-stats",
+        verified: false
+      },
+      null,
+      2
+    )}\n`,
+    "utf8"
+  );
+
+  await mkdir(path.join(rootDir, "problems", "hackerrank", "diagonal-difference"), { recursive: true });
+  await writeFile(
+    path.join(rootDir, "problems", "hackerrank", "diagonal-difference", "problem.json"),
+    `${JSON.stringify(
+      {
+        title: "Diagonal Difference",
+        slug: "diagonal-difference",
+        platform: "HackerRank",
+        difficulty: "",
+        url: "https://www.hackerrank.com/challenges/diagonal-difference",
+        status: "Solved",
+        language: null,
+        tags: ["master"],
+        timeComplexity: "",
+        spaceComplexity: "",
+        username: "sunilkvb44",
+        recordType: "problem",
+        verified: false
+      },
+      null,
+      2
+    )}\n`,
+    "utf8"
+  );
+
+  await runCli(["add", "leetcode", "case-problem"], rootDir);
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "case-problem", "problem.json"),
+    `${JSON.stringify(
+      {
+        title: "Case Problem",
+        slug: "case-problem",
+        platform: "LeetCode",
+        difficulty: "Easy",
+        url: "https://leetcode.com/problems/case-problem/",
+        status: "Solved",
+        language: "JavaScript",
+        tags: [],
+        timeComplexity: "O(1)",
+        spaceComplexity: "O(1)",
+        verified: false
+      },
+      null,
+      2
+    )}\n`,
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "case-problem", "solutions", "javascript.js"),
+    "export default function solve() { return 1; }\n",
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "case-problem", "tests.json"),
+    `${JSON.stringify({ tests: [{ input: [], expected: 1 }] }, null, 2)}\n`,
+    "utf8"
+  );
+  await writeFile(
+    path.join(rootDir, "problems", "leetcode", "case-problem", "explanation.md"),
+    "# Case Problem\n",
+    "utf8"
+  );
+
+  const sync = await runCli(["sync"], rootDir);
+  assert.match(sync.stdout, /Total problems: 3/);
+  assert.match(sync.stdout, /Verified problems: 1/);
+  assert.match(sync.stdout, /Platforms: codechef, hackerrank, leetcode|Platforms: codechef, leetcode, hackerrank|Platforms: hackerrank, codechef, leetcode|Platforms: hackerrank, leetcode, codechef|Platforms: leetcode, codechef, hackerrank|Platforms: leetcode, hackerrank, codechef/);
+
+  const generatedProblems = JSON.parse(await readFile(path.join(rootDir, "data", "problems.json"), "utf8"));
+  const hackerrankProblem = generatedProblems.find((problem) => problem.slug === "diagonal-difference");
+  const codechefProblem = generatedProblems.find((problem) => problem.slug === "profile-sunilkumarkv");
+  assert.equal(hackerrankProblem.platform, "hackerrank");
+  assert.equal(codechefProblem.platform, "codechef");
+  assert.equal(hackerrankProblem.hasCode, false);
+  assert.equal(codechefProblem.hasCode, false);
+  assert.equal(hackerrankProblem.solutionCount, 0);
+  assert.equal(codechefProblem.solutionCount, 0);
+  assert.equal(hackerrankProblem.explanation, "");
+  assert.equal(codechefProblem.explanation, "");
+
+  const normalizedLeetcodeProblem = JSON.parse(
+    await readFile(path.join(rootDir, "problems", "leetcode", "case-problem", "problem.json"), "utf8")
+  );
+  assert.equal(normalizedLeetcodeProblem.platform, "leetcode");
+
+  const normalizedHackerrankProblem = JSON.parse(
+    await readFile(path.join(rootDir, "problems", "hackerrank", "diagonal-difference", "problem.json"), "utf8")
+  );
+  assert.equal(normalizedHackerrankProblem.platform, "hackerrank");
+
+  const generatedStats = JSON.parse(await readFile(path.join(rootDir, "data", "stats.json"), "utf8"));
+  assert.equal(generatedStats.totalProblems, 3);
+  assert.equal(generatedStats.verifiedProblems, 1);
+  assert.equal(generatedStats.byPlatform.leetcode, 1);
+  assert.equal(generatedStats.byPlatform.hackerrank, 1);
+  assert.equal(generatedStats.byPlatform.codechef, 1);
 });

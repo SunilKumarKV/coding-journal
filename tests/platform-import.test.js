@@ -6,7 +6,7 @@ import path from "node:path";
 import { explainProblem, explainProblemWithAI } from "../lib/explain-problem.js";
 import { buildData } from "../lib/build-data.js";
 import { getLanguageFileInfo } from "../lib/journal.js";
-import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
+import { formatPullDebugInfo, importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
 import { captureSolution } from "../lib/capture-solution.js";
 import {
   normalizeProblem as normalizeCodeforcesProblem,
@@ -41,6 +41,40 @@ function createCodeforcesFetchStub(result) {
     ok: true,
     async json() {
       return { status: "OK", result };
+    }
+  });
+}
+
+function createHackerrankFetchStub(routes) {
+  return async (url) => {
+    const entry = routes[String(url)];
+
+    if (!entry) {
+      return {
+        ok: false,
+        status: 404,
+        async json() {
+          return { error: "Not Found" };
+        }
+      };
+    }
+
+    return {
+      ok: true,
+      status: 200,
+      async json() {
+        return entry;
+      }
+    };
+  };
+}
+
+function createCodeChefFetchStub(html) {
+  return async () => ({
+    ok: true,
+    status: 200,
+    async text() {
+      return html;
     }
   });
 }
@@ -291,6 +325,155 @@ test("Codeforces pull groups accepted submissions", async () => {
   assert.equal(problem.submissions.length, 1);
   assert.equal(problem.submissions[0].codeAvailable, false);
   assert.equal(problem.submissions[0].language, "GNU C++20");
+});
+
+test("HackerRank pull imports public recent challenge metadata without fake code", async () => {
+  const rootDir = await createWorkspace();
+  const fetchImpl = createHackerrankFetchStub({
+    "https://www.hackerrank.com/rest/contests/master/hackers/sunilkvb44/profile": {
+      model: {
+        id: 18305604,
+        username: "sunilkvb44",
+        created_at: "2022-06-29T03:17:38.000Z"
+      }
+    },
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/badges": {
+      status: true,
+      models: [{ badge_name: "Problem Solving", solved: 6, stars: 1 }]
+    },
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/skills": ["React.js", "JavaScript"],
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/recent_challenges?limit=50": {
+      models: [
+        {
+          name: "Diagonal Difference",
+          ch_slug: "diagonal-difference",
+          created_at: "2025-01-28T17:55:01.000+00:00",
+          con_slug: "master",
+          url: "/challenges/diagonal-difference"
+        },
+        {
+          name: "Solve Me First",
+          ch_slug: "solve-me-first",
+          created_at: "2025-01-27T14:46:22.000+00:00",
+          con_slug: "master",
+          url: "/challenges/solve-me-first"
+        }
+      ],
+      cursor: "",
+      last_page: true
+    }
+  });
+
+  const result = await pullPlatformProblems("hackerrank", "@sunilkvb44", { rootDir, fetchImpl });
+  assert.equal(result.created.length, 2);
+  assert.match(result.warning, /recent solved challenge metadata/i);
+  assert.equal(result.debug.dataSource, "public-api-recent-challenges");
+  assert.equal(result.debug.extractedProblemIdsCount, 2);
+
+  const problem = JSON.parse(
+    await readFile(path.join(rootDir, "problems", "hackerrank", "diagonal-difference", "problem.json"), "utf8")
+  );
+  assert.equal(problem.platform, "hackerrank");
+  assert.equal(problem.title, "Diagonal Difference");
+  assert.equal(problem.recordType, "problem");
+  assert.equal(problem.username, "sunilkvb44");
+  assert.equal(problem.url, "https://www.hackerrank.com/challenges/diagonal-difference");
+  await assert.rejects(readFile(path.join(rootDir, "problems", "hackerrank", "diagonal-difference", "explanation.md"), "utf8"));
+});
+
+test("HackerRank pull falls back to summary stats when only profile stats are public", async () => {
+  const rootDir = await createWorkspace();
+  const fetchImpl = createHackerrankFetchStub({
+    "https://www.hackerrank.com/rest/contests/master/hackers/sunilkvb44/profile": {
+      model: {
+        id: 18305604,
+        username: "sunilkvb44",
+        created_at: "2022-06-29T03:17:38.000Z"
+      }
+    },
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/badges": {
+      status: true,
+      models: [
+        { badge_name: "Problem Solving", solved: 6, stars: 1 },
+        { badge_name: "Java", solved: 3, stars: 2 }
+      ]
+    },
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/skills": ["React.js", "JavaScript"],
+    "https://www.hackerrank.com/rest/hackers/sunilkvb44/recent_challenges?limit=50": {
+      models: [],
+      cursor: "",
+      last_page: true
+    }
+  });
+
+  const result = await pullPlatformProblems("hackerrank", "@sunilkvb44", { rootDir, fetchImpl });
+  assert.equal(result.created.length, 1);
+  assert.equal(
+    result.warning,
+    "Profile found. Solved count detected, but individual solved problem data is not publicly available."
+  );
+
+  const debugOutput = formatPullDebugInfo(result.debug).join("\n");
+  assert.match(debugOutput, /profile fetched: yes/);
+  assert.match(debugOutput, /profileApi=true/);
+  assert.match(debugOutput, /badgesApi=true/);
+  assert.match(debugOutput, /skillsApi=true/);
+  assert.match(debugOutput, /solved count found: 6/);
+  assert.match(debugOutput, /Problem Solving: 1 star\(s\), solved 6/);
+
+  const summary = JSON.parse(
+    await readFile(path.join(rootDir, "problems", "hackerrank", "profile-sunilkvb44", "problem.json"), "utf8")
+  );
+  assert.equal(summary.platform, "hackerrank");
+  assert.equal(summary.username, "sunilkvb44");
+  assert.equal(summary.solvedCount, 6);
+  assert.equal(summary.recordType, "profile-stats");
+  assert.equal(summary.source, "html-summary-only");
+  assert.deepEqual(summary.skills, ["React.js", "JavaScript"]);
+  assert.equal(Array.isArray(summary.badges), true);
+  await assert.rejects(readFile(path.join(rootDir, "problems", "hackerrank", "profile-sunilkvb44", "explanation.md"), "utf8"));
+});
+
+test("CodeChef pull falls back to profile stats when only solved count is public", async () => {
+  const rootDir = await createWorkspace();
+  const html = `<!doctype html>
+<html>
+  <body>
+    <section class="rating-data-section problems-solved">
+      <h3>Learning Paths (2)</h3>
+      <h3>Practice Paths (0)</h3>
+      <p>None</p>
+      <h3>Contests (0)</h3>
+      <p>None</p>
+      <h3>Total Problems Solved: 115</h3>
+    </section>
+    <div class='widget badges'>
+      <div class='badge'>
+        <p class='badge__title'>Problem Solver - Bronze Badge</p>
+        <p class='badge__description'>Received for solving <span class='badge__goal'>50</span> Problems</p>
+      </div>
+    </div>
+  </body>
+</html>`;
+
+  const result = await pullPlatformProblems("codechef", "sunilkumarkv", {
+    rootDir,
+    fetchImpl: createCodeChefFetchStub(html)
+  });
+
+  assert.equal(result.created.length, 1);
+  assert.equal(
+    result.warning,
+    "Profile found. Solved count detected, but individual solved problem data is not publicly available."
+  );
+
+  const summary = JSON.parse(
+    await readFile(path.join(rootDir, "problems", "codechef", "profile-sunilkumarkv", "problem.json"), "utf8")
+  );
+  assert.equal(summary.platform, "codechef");
+  assert.equal(summary.solvedCount, 115);
+  assert.equal(summary.recordType, "profile-stats");
+  assert.equal(summary.source, "html-summary-only");
 });
 
 test("build includes submissions and solutions", async () => {

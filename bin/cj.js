@@ -11,7 +11,7 @@ import {
   slugify
 } from "../lib/journal.js";
 import { explainProblem, explainProblemWithAI } from "../lib/explain-problem.js";
-import { importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
+import { formatPullDebugInfo, importSingleProblem, importSubmission, pullPlatformProblems } from "../lib/import-problems.js";
 import { publishChanges } from "../lib/publish.js";
 import { prepareRelease } from "../lib/release.js";
 import { publishJournalData } from "../lib/publish-journal.js";
@@ -56,12 +56,14 @@ program
   .argument("<platform>", "platform key such as leetcode or codeforces")
   .argument("<username>", "public username or handle")
   .option("--force", "overwrite existing generated files", false)
+  .option("--debug", "print importer diagnostics", false)
   .description("Pull accepted-submission metadata from a public coding platform profile")
   .action(async (platformInput, username, options, command) => {
     const rootDir = getCommandRoot(command);
     const result = await pullPlatformProblems(platformInput, username, {
       rootDir,
-      force: options.force
+      force: options.force,
+      debug: options.debug
     });
 
     console.log(`Fetched ${result.totalFetched} public solved problem(s).`);
@@ -73,6 +75,12 @@ program
 
     if (result.warning) {
       console.warn(result.warning);
+    }
+
+    if (options.debug && result.debug) {
+      for (const line of formatPullDebugInfo(result.debug)) {
+        console.log(line);
+      }
     }
   });
 
@@ -81,12 +89,14 @@ program
   .argument("<platform>", "platform key such as leetcode or codeforces")
   .argument("<username>", "public username or handle")
   .option("--force", "overwrite existing generated files", false)
+  .option("--debug", "print importer diagnostics", false)
   .description("Alias for cj pull")
   .action(async (platformInput, username, options, command) => {
     const rootDir = getCommandRoot(command);
     const result = await pullPlatformProblems(platformInput, username, {
       rootDir,
-      force: options.force
+      force: options.force,
+      debug: options.debug
     });
 
     console.log(`Fetched ${result.totalFetched} public solved problem(s).`);
@@ -98,6 +108,12 @@ program
 
     if (result.warning) {
       console.warn(result.warning);
+    }
+
+    if (options.debug && result.debug) {
+      for (const line of formatPullDebugInfo(result.debug)) {
+        console.log(line);
+      }
     }
   });
 
