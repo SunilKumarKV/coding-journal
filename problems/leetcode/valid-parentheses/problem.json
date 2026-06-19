@@ -1,0 +1,49 @@
+{
+  "title": "20. Valid Parentheses",
+  "slug": "valid-parentheses",
+  "platform": "leetcode",
+  "difficulty": "Easy",
+  "url": "https://leetcode.com/problems/valid-parentheses/",
+  "status": "Solved",
+  "language": "JavaScript",
+  "tags": [
+    "My Lists",
+    "String",
+    "Stack"
+  ],
+  "timeComplexity": "",
+  "spaceComplexity": "",
+  "verified": false,
+  "solvedAt": "2026-06-19T20:52:24.445Z",
+  "source": "browser-extension",
+  "submissions": [
+    {
+      "language": "JavaScript",
+      "submittedAt": "2026-06-19T20:46:04.481Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/javascript.js"
+    },
+    {
+      "language": "Java",
+      "submittedAt": "2026-06-19T20:46:50.939Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/java.java"
+    },
+    {
+      "language": "C",
+      "submittedAt": "2026-06-19T20:48:32.099Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/c.c"
+    },
+    {
+      "language": "Python",
+      "submittedAt": "2026-06-19T20:52:24.445Z",
+      "source": "browser-extension",
+      "codeAvailable": true,
+      "filename": "solutions/python.py"
+    }
+  ]
+}

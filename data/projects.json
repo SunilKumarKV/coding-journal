@@ -68,7 +68,11 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/coding-journal",
     "homepage": null,
+<<<<<<< HEAD
     "updatedAt": "2026-06-19T12:53:26Z",
+=======
+    "updatedAt": "2026-06-19T12:53:44Z",
+>>>>>>> 4840aaf (chore: sync daily solved problems)
     "featured": true,
     "priority": 4
   },
@@ -102,7 +106,7 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/leetcode-sync",
     "homepage": null,
-    "updatedAt": "2026-06-19T10:07:02Z",
+    "updatedAt": "2026-06-19T19:20:27Z",
     "featured": false,
     "priority": 6
   },

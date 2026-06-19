@@ -1,21 +1,21 @@
 {
-  "totalProblems": 54,
+  "totalProblems": 55,
   "verifiedProblems": 9,
   "problemsMissingCode": 0,
   "byPlatform": {
     "codechef": 1,
     "hackerrank": 38,
-    "leetcode": 15
+    "leetcode": 16
   },
   "byLanguage": {
-    "C": 5,
-    "Java": 5,
-    "JavaScript": 15,
-    "Python": 1
+    "C": 6,
+    "Java": 6,
+    "JavaScript": 16,
+    "Python": 2
   },
   "byDifficulty": {
     "Mid": 1,
-    "Easy": 12
+    "Easy": 13
   },
   "byTag": {
     "master": 38,
@@ -29,13 +29,14 @@
     "JavaScript": 5,
     "Closure": 3,
     "Design": 2,
-    "My Lists": 1,
-    "String": 2,
+    "My Lists": 2,
+    "String": 3,
     "Trie": 1,
     "Promise": 1,
     "Async": 1,
     "Hash Map": 1,
-    "Two Pointers": 1
+    "Two Pointers": 1,
+    "Stack": 1
   },
   "totalProjects": 17
 }

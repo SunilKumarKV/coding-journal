@@ -1635,5 +1635,84 @@
       }
     ],
     "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/valid-palindrome/explanation.md"
+  },
+  {
+    "title": "20. Valid Parentheses",
+    "slug": "valid-parentheses",
+    "platform": "leetcode",
+    "difficulty": "Easy",
+    "url": "https://leetcode.com/problems/valid-parentheses/",
+    "status": "Solved",
+    "language": "JavaScript",
+    "tags": [
+      "My Lists",
+      "String",
+      "Stack"
+    ],
+    "timeComplexity": "",
+    "spaceComplexity": "",
+    "verified": false,
+    "solvedAt": "2026-06-19T20:52:24.445Z",
+    "source": "browser-extension",
+    "submissions": [
+      {
+        "language": "JavaScript",
+        "submittedAt": "2026-06-19T20:46:04.481Z",
+        "source": "browser-extension",
+        "codeAvailable": true,
+        "filename": "solutions/javascript.js"
+      },
+      {
+        "language": "Java",
+        "submittedAt": "2026-06-19T20:46:50.939Z",
+        "source": "browser-extension",
+        "codeAvailable": true,
+        "filename": "solutions/java.java"
+      },
+      {
+        "language": "C",
+        "submittedAt": "2026-06-19T20:48:32.099Z",
+        "source": "browser-extension",
+        "codeAvailable": true,
+        "filename": "solutions/c.c"
+      },
+      {
+        "language": "Python",
+        "submittedAt": "2026-06-19T20:52:24.445Z",
+        "source": "browser-extension",
+        "codeAvailable": true,
+        "filename": "solutions/python.py"
+      }
+    ],
+    "explanation": "# 20. Valid Parentheses\n\n## Problem Summary\n\nGiven a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid. \n\nAn input string is valid if:\n1. Open brackets are closed by the same type of brackets.\n2. Open brackets are closed in the correct order.\n3. Every close bracket has a corresponding open bracket of the same type.\n\n## Approach\n\nThe solution utilizes a **Stack** data structure to ensure proper nesting and order of the parentheses:\n\n1. **Map Mapping**: Define a lookup map where the closing brackets are keys and their corresponding opening brackets are values.\n2. **Stack Traversal**:\n   - Loop through each character of the string.\n   - If the character is a closing bracket (exists in our map):\n     - Pop the top element from the stack. If the stack is empty, use a placeholder value (like `'#'`).\n     - Check if this popped element matches the expected opening bracket from the map. If it does not match, the string is invalid, so return `false`.\n   - If the character is an opening bracket, push it onto the stack.\n3. **Final Check**: Once the loop finishes, the string is valid only if the stack is completely empty (meaning all opened brackets were correctly closed).\n\n## Time Complexity\n```text\nO(N)\n```\nWhere `N` is the length of the string `s`. We traverse the string exactly once, performing constant-time `O(1)` push and pop operations.\n\n## Space Complexity\n```text\nO(N)\n```\nIn the worst-case scenario (e.g., a string consisting only of opening brackets like `(((((...`), we push all characters onto the stack.\n\n## Step-By-Step Example\n\nLet's trace the algorithm conceptually with a sample input string: `s = \"()[]{}\"`\n\n* **Initialization**: \n  - `stack = []`\n  - `map = { ')': '(', '}': '{', ']': '[' }`\n\n* **Step 1**: Character `char = '('`\n  - This is an opening bracket.\n  - Push to stack: `stack = ['(']`\n\n* **Step 2**: Character `char = ')'`\n  - This is a closing bracket.\n  - Pop from stack: `topElement = '('`\n  - Check: `map[')']` is `'('`, which matches `topElement`.\n  - Stack state: `stack = []`\n\n* **Step 3**: Character `char = '['`\n  - This is an opening bracket.\n  - Push to stack: `stack = ['[']`\n\n* **Step 4**: Character `char = ']'`\n  - This is a closing bracket.\n  - Pop from stack: `topElement = '['`\n  - Check: `map[']']` is `'['`, which matches `topElement`.\n  - Stack state: `stack = []`\n\n* **Step 5**: Character `char = '{'`\n  - This is an opening bracket.\n  - Push to stack: `stack = ['{']`\n\n* **Step 6**: Character `char = '}'`\n  - This is a closing bracket.\n  - Pop from stack: `topElement = '{'`\n  - Check: `map['}']` is `'{'`, which matches `topElement`.\n  - Stack state: `stack = []`\n\n* **Completion**: \n  - The loop ends.\n  - Check if `stack` is empty. Since `stack.length === 0`, return `true`.\n\n## Key Learning\n\nUsing a **Stack (LIFO - Last In, First Out)** is the optimal pattern for processing matching pairs or nested structures. The last opening bracket encountered must always be the first one to be closed.\n\n## Languages Solved\n* JavaScript\n",
+    "hasCode": true,
+    "solutionCount": 4,
+    "solutions": [
+      {
+        "language": "C",
+        "filename": "c.c",
+        "code": "class Solution {\n    public boolean isValid(String s) {\n        Stack<Character> stack = new Stack<>();\n        HashMap<Character, Character> map = new HashMap<>();\n        map.put(')', '(');\n        map.put('}', '{');\n        map.put(']', '[');\n\n        for (int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            if (map.containsKey(c)) {\n                char topElement = stack.empty() ? '#' : stack.pop();\n                if (topElement != map.get(c)) {\n                    return false;\n                }\n            } else {\n                stack.push(c);\n            }\n        }\n        return stack.empty();\n    }",
+        "path": "problems/leetcode/valid-parentheses/solutions/c.c"
+      },
+      {
+        "language": "Java",
+        "filename": "java.java",
+        "code": "class Solution {\n    public boolean isValid(String s) {\n        \n    }\n}",
+        "path": "problems/leetcode/valid-parentheses/solutions/java.java"
+      },
+      {
+        "language": "JavaScript",
+        "filename": "javascript.js",
+        "code": "*/\nvar isValid = function(s) {\n    const stack = [];\n    const map = {\n        ')': '(',\n        '}': '{',\n        ']': '['\n    };\n\n    for (let char of s) {\n        if (char in map) {\n            const topElement = stack.length === 0 ? '#' : stack.pop();\n            if (map[char] !== topElement) {\n                return false;\n            }\n        } else {\n            stack.push(char);\n * @return {boolean}\n * @param {string} s\n/**",
+        "path": "problems/leetcode/valid-parentheses/solutions/javascript.js"
+      },
+      {
+        "language": "Python",
+        "filename": "python.py",
+        "code": "class Solution(object):\n    def isValid(self, s):\n        \"\"\"\n        :type s: str\n        :rtype: bool\n        \"\"\"",
+        "path": "problems/leetcode/valid-parentheses/solutions/python.py"
+      }
+    ],
+    "detailUrl": "https://raw.githubusercontent.com/SunilKumarKV/coding-journal/main/problems/leetcode/valid-parentheses/explanation.md"
   }
 ]
