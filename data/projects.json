@@ -16,7 +16,7 @@
     ],
     "url": "https://github.com/SunilKumarKV/sunilcraft",
     "homepage": "https://sunilcraft.vercel.app",
-    "updatedAt": "2026-06-19T12:53:33Z",
+    "updatedAt": "2026-06-19T15:20:36Z",
     "featured": true,
     "priority": 1
   },
@@ -68,11 +68,7 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/coding-journal",
     "homepage": null,
-<<<<<<< HEAD
-    "updatedAt": "2026-06-19T12:53:26Z",
-=======
-    "updatedAt": "2026-06-19T12:53:44Z",
->>>>>>> 4840aaf (chore: sync daily solved problems)
+    "updatedAt": "2026-06-20T14:13:59Z",
     "featured": true,
     "priority": 4
   },
@@ -106,7 +102,7 @@
     "topics": [],
     "url": "https://github.com/SunilKumarKV/leetcode-sync",
     "homepage": null,
-    "updatedAt": "2026-06-19T19:20:27Z",
+    "updatedAt": "2026-06-20T13:18:23Z",
     "featured": false,
     "priority": 6
   },
